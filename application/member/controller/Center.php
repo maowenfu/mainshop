@@ -104,4 +104,12 @@ class Center  extends ClientbaseController{
         $this->assign('title', '添加银行卡');
         return $this->fetch('add_bank_card');
     }
+
+    /*------------------------------------------------------ */
+    //-- 添加银行卡
+    /*------------------------------------------------------ */
+    public function rankList(){
+        $this->assign('title', '排位列表');
+        return $this->fetch('rank_list');
+    }
 }?>
