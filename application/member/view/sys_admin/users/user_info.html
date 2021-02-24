@@ -1,0 +1,302 @@
+<header class="panel-heading bg-light">
+    帐户信息
+</header>
+<div class="form-group m-t">
+    <label class="control-label">注册手机：</label>
+    <div class="col-sm-3 m-t-mc">
+        {$row.mobile}
+        <a href="javascript:;" data-remote="{:url('member/sys_admin.users/upMobile',array('user_id'=>$row['user_id']))}" data-toggle="ajaxModal"  class="btn btn-sm btn-default m-l" >
+            <i class="fa fa-edit"></i>修改手机
+        </a>
+    </div>
+    <label class="control-label">推荐上级：</label>
+    <div class="col-sm-3 m-t-mc">
+        {if condition="$row.pid > 0"}
+            <a href="{:url('sys_admin.users/info',['user_id'=>$row['pid']])}" target="_blank">{$row.pid} - {$row.pid|userInfo}</a>
+        {else/}
+            没有上级
+        {/if}
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label">用户用户名：</label>
+    <div class="col-sm-3"><label>{$row.nick_name|default='未填写'}</label></div>
+    <label class="control-label">分销身份：</label>
+    <div class="col-sm-3 m-t-mc">{$row['role_id']==0?'粉丝':$roleList[$row['role_id']]['role_name']}
+        <a href="javascript:;" title="修改分销身份" data-remote="{:url('sys_admin.users/editRole',array('user_id'=>$row['user_id']))}" data-toggle="ajaxModal" class="btn btn-sm btn-default m-l" >
+            <i class="fa fa-edit"></i>修改身份
+        </a>
+    </div>
+</div>
+<header >
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tabInfo_{$row.user_id}" data-toggle="tab">基本信息</a></li>
+        <li><a href="#tabBank_{$row.user_id}" data-toggle="tab">会员资料</a></li>
+        <li><a href="#tabDescribe_{$row.user_id}" data-toggle="tab">地址信息</a></li>
+        {if condition="$isTeamTree == 0"}
+        <li><a href="#tabSuperior_{$row.user_id}" class="superior_tab" data-user_id="{$row.user_id}" data-toggle="tab">推荐上级</a></li>
+        <li><a href="#tabChain_{$row.user_id}" class="chain_tab" data-user_id="{$row.user_id}"  data-toggle="tab">推荐团队(人数 - {$teamCount})</a></li>
+        <li><a href="#tabStat_{$row.user_id}" class="stat_tab" data-user_id="{$row.user_id}" {$has_order==0?'hide':''}" data-toggle="tab">业绩统计</a></li>
+        {/if}
+        <li><a href="#tabOptLog_{$row.user_id}" class="optlog_tab"  data-user_id="{$row.user_id}" data-toggle="tab">操作日志</a></li>
+    </ul>
+</header>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tabInfo_{$row.user_id}">
+            <div class="form-group">
+                <label class="control-label">真实姓名：</label>
+                <div class="col-sm-3"><label>{$row.real_name|default='未填写'}</label></div>
+                <label class="control-label">用户级别：</label>
+                <div class="col-sm-3 m-t-mc">{$row.account.total_integral|userLevel}</div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">注册时间：</label>
+                <div class="col-sm-3"><label>{$row.reg_time|dateTpl}</label></div>
+                <label class="control-label">最近购买时间：</label>
+                <div class="col-sm-3 m-t-mc">{$row.last_buy_time|dateTpl}
+                    <a href="{:url('shop/sys_admin.order/index',array('user_id'=>$row['user_id']))}" target="_blank"  class="btn btn-sm btn-default m-l {$has_order==0?'hide':''}" >
+                        <i class="fa fa-search"></i> 查看会员订单
+                    </a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">最近登陆时间：</label>
+                <div class="col-sm-3"><label>{$row.login_time|dateTpl}</label></div>
+                <label class="control-label">最近登陆IP：</label>
+                <div class="col-sm-3"><label>{$row.login_ip|default='未记录'}</label></div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="control-label">帐户余额：</label>
+                <div class="col-sm-3 m-t-mc">
+                        {$row.account.balance_money|priceFormat=true}
+                        <a href="{:url('sys_admin.accountLog/index',array('user_id'=>$row['user_id']))}" class="btn btn-sm btn-default m-l" title="查看明细"><i class="fa fa-search "></i> 查看明细</a>
+                </div>
+                <label class="control-label">待到帐佣金：</label>
+                <div class="col-sm-3 m-t-mc">
+                    {$wait_money|priceFormat=true}
+                    <a href="{:url('distribution/sys_admin.dividend_log/index',array('keyword'=>$row['user_id'],'status'=>2))}" class="btn btn-sm btn-default m-l" title="查看明细"><i class="fa fa-search "></i> 查看明细</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">历史总佣金：</label>
+                <div class="col-sm-5">
+                    <label >{$row.account.total_dividend|priceFormat=true} <span class="help-inline">此项记录用户历史所有佣金总和</span></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">消费积分：</label>
+                <div class="col-sm-3">
+                    <label>
+                        {$row.account.use_integral|intval}
+                    </label>
+                </div>
+                <label class="control-label">历史总积分：</label>
+                <div class="col-sm-3">
+                    <label>
+                        {$row.account.total_integral|intval}
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!--提现帐号-->
+        <div class="tab-pane" id="tabBank_{$row.user_id}" style="overflow: hidden">
+            <div class="form-horizontal">
+                <header class="panel-heading bg-light">
+                    会员信息
+                </header>
+                <div class="form-group m-t-md">
+                    <label class="control-label">联系电话：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.tel|default='未填写'}
+                        </label>
+                    </div>
+                    <label class="control-label">qq：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.qq|default='未填写'}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group m-t-mc">
+                    <label class="control-label">电子邮箱：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.email|default='未填写'}
+                        </label>
+                    </div>
+                    <label class="control-label">生日：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.birthday}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">会员用户名：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.nick_name|default='未填写'}
+                        </label>
+                    </div>
+
+                </div>
+                <header class="panel-heading bg-light">
+                    微信信息
+                </header>
+
+                <div class="form-group m-t-md" style="position:relative;">
+                    {if condition="$row.wx.wx_headimgurl <> ''"}
+                    <div style="position:absolute; right:20px; width:120px;"><img src="{$row.wx.wx_headimgurl}" style="width:100%" /></div>
+                    {/if}
+                    <label class="control-label">呢称：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.wx.wx_nickname|default='未获取'}
+                        </label>
+                        <a href="{:url('weixin/sys_admin.users/inviteLog',['wxuid'=>$row['wx']['wxuid']])}" data-toggle="ajaxModal"  class="btn btn-sm btn-default m-l" >
+                            <i class="fa fa-search"></i> 查看来源
+                        </a>
+                    </div>
+                    <label class="control-label">性别：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row['wx']['sex']==1?'男':$row['wx']['sex']==2?'女':'未知'}
+                        </label>
+                    </div>
+
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">省份：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.wx.wx_province|default='未获取'}
+                        </label>
+                    </div>
+                    <label class="control-label">城市：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.wx.wx_city|default='未获取'}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">是否关注：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row['wx']['subscribe']==1?'已关注':'未关注'}
+                        </label>
+                    </div>
+                    <label class="control-label">关注时间：</label>
+                    <div class="col-sm-3">
+                        <label>
+                            {$row.wx.wx_subscribe_time|dateTpl}
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--地址信息-->
+        <div class="tab-pane" id="tabDescribe_{$row.user_id}" style="overflow: hidden">
+            <div class="table-responsive " id="list_box">
+                <table class="table table-bordered table-hover  m-b-none">
+                    <thead>
+                    <tr>
+                        <th width="100">默认</th>
+                        <th width="200">收货人</th>
+                        <th width="200">联系电话</th>
+                        <th>地址</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="row.user_address" id="ua" }
+                    <tr>
+                        <td ><a href="javascript:;"  class="{$ua['is_default']?'active':''}" data-fun="shelves" data-toggle="class" data-ajax="true"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a></td>
+                        <td >{$ua.consignee}</td>
+                        <td >{$ua['mobile']}</td>
+                        <td >{$ua.merger_name} - {$ua.address}</td>
+                    </tr>
+                    {/volist}
+                    {empty name="row.user_address"}
+                    <tr>
+                        <td colspan="4" align="center" style="height:150px;">暂无收货地址信息！</td>
+                    </tr>
+                    {/empty}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--上级关系树-->
+        <div class="tab-pane" id="tabSuperior_{$row.user_id}" style="overflow: hidden">
+            <div class="table-responsive"></div>
+            <div class="form-group" style=" margin-left:0px;">
+                <div class="col-sm-8">
+                    <button class="btn btn-sm btn-default" type="button"  data-remote="{:url('sys_admin.users/editSuperior',array('user_id'=>$row['user_id']))}" data-toggle="ajaxModal"  ><i class="fa fa-edit"></i>修改所属上级</button>
+                </div>
+            </div>
+        </div>
+
+        <!--下级关系树-->
+        <div class="tab-pane" id="tabChain_{$row.user_id}" style="overflow: hidden">
+            <div class="col-sm-3 m-t-md">
+                <div id="MyTree2" class="tree tree-plus-minus">
+                    <div class="tree-folder" style="display: none;">
+                        <div class="tree-folder-header">
+                            <i class="fa fa-folder"></i>
+                            <div class="tree-folder-name"></div>
+                        </div>
+                        <div class="tree-folder-content">
+                        </div>
+                        <div class="tree-loader" style="display: none;"></div>
+                    </div>
+                    <div class="tree-item" style="display: none;">
+                        <i class="tree-dot"></i>
+                        <div class="tree-item-name"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 m-t-md" style=" float: right; ">
+                <form  class="form-horizontal">
+                    <div id="team_chain_user_info"></div>
+                </form>
+            </div>
+            <div class="clearfix m-b"></div>
+        </div>
+        <!--统计-->
+        <div class="tab-pane" id="tabStat_{$row.user_id}" style="overflow: hidden">
+            <div class="form-group fl m-r">
+                <a class="btn btn-default " data-toggle="reportrange" >
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <small>下单时间</small>
+                    <span></span> <b class="caret"></b>
+                    <input type="hidden" value="{$start_date} - {$end_date}" id="reportrange_{$row.user_id}" name="reportrange" />
+                </a>
+            </div>
+            <button class="btn evalStat" type="button" data-user_id="{$row.user_id}" ><i class="fa fa-search"></i>执行统计</button>
+            <div class="clearfix"></div>
+            <div id="evalStatBox" class="form-horizontal"></div>
+        </div>
+        <!--统计-->
+        <div class="tab-pane" id="tabOptLog_{$row.user_id}" style="overflow: hidden">
+            <table class="table table-bordered table-hover  m-b-none" id="tabOptLogBox_{$row.user_id}">
+                <thead>
+                <tr>
+                    <th width="80">LOGID</th>
+                    <th width="200">操作用户</th>
+                    <th width="150">操作时间</th>
+                    <th>记录</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+

@@ -1,0 +1,68 @@
+TRUNCATE TABLE asyn_run_error_log;
+
+TRUNCATE TABLE distribution_dividend_award;
+TRUNCATE TABLE distribution_dividend_log;
+TRUNCATE TABLE distribution_dividend_role;
+TRUNCATE TABLE distribution_share_temp;
+
+TRUNCATE TABLE favour;
+TRUNCATE TABLE favour_goods;
+TRUNCATE TABLE favour_goods_info;
+
+TRUNCATE TABLE fightgroup;
+TRUNCATE TABLE fightgroup_goods;
+TRUNCATE TABLE fightgroup_list;
+
+TRUNCATE TABLE integral_goods;
+TRUNCATE TABLE integral_goods_list;
+
+TRUNCATE TABLE integral_goods;
+TRUNCATE TABLE integral_goods_list;
+
+TRUNCATE TABLE main_log_login;
+TRUNCATE TABLE main_log_sys;
+
+TRUNCATE TABLE second_list;
+
+TRUNCATE TABLE shop_after_sale;
+TRUNCATE TABLE shop_after_sale_log;
+
+TRUNCATE TABLE shop_bonus_list;
+TRUNCATE TABLE shop_bonus_type;
+
+TRUNCATE TABLE shop_cart;
+TRUNCATE TABLE shop_goods;
+TRUNCATE TABLE shop_goods;
+TRUNCATE TABLE shop_goods_collect;
+TRUNCATE TABLE shop_goods_comment;
+TRUNCATE TABLE shop_goods_comment_images;
+TRUNCATE TABLE shop_goods_imgs;
+TRUNCATE TABLE shop_goods_log;
+TRUNCATE TABLE shop_goods_prices;
+TRUNCATE TABLE shop_goods_sku;
+TRUNCATE TABLE shop_goods_sku_custom;
+TRUNCATE TABLE shop_goods_volume_price;
+
+TRUNCATE TABLE shop_order_goods;
+TRUNCATE TABLE shop_order_info;
+TRUNCATE TABLE shop_order_log;
+TRUNCATE TABLE shop_shipping_log;
+TRUNCATE TABLE supplyer;
+TRUNCATE TABLE supplyer_log_login;
+TRUNCATE TABLE supplyer_log_sys;
+
+TRUNCATE TABLE users;
+ALTER TABLE `users` AUTO_INCREMENT=29900;
+TRUNCATE TABLE users_account;
+TRUNCATE TABLE users_account_log;
+TRUNCATE TABLE users_address;
+TRUNCATE TABLE users_avatar_user;
+TRUNCATE TABLE users_bind_superior;
+TRUNCATE TABLE users_level;
+TRUNCATE TABLE users_log_login;
+TRUNCATE TABLE users_log_sys;
+TRUNCATE TABLE users_recharge_log;
+TRUNCATE TABLE users_sign;
+TRUNCATE TABLE users_withdraw_account;
+TRUNCATE TABLE users_withdraw_log;
+TRUNCATE TABLE weixin_users;

@@ -1,0 +1,65 @@
+<div class="form-group">
+    <label class="control-label">排位奖项：</label>
+    <div class="col-sm-5">
+        <table class="table table-hover  table-bordered">
+            <thead>
+                <tr>
+                    <th class="txt_center">公排奖金</th>
+                    <th class="txt_center">推广奖金</th>
+            </thead>
+            <tbody id="d_role_box">
+                <tr>
+                    <td align="center">
+                       获得 <input type="text" name="rank_award[num]" class="input-ssmall" min="-1" value="{$row.rank_award.num}">
+                        元 滑落两单，其中 <input type="text" name="rank_award[repeat_num]" class="input-ssmall" min="-1" value="{$row.rank_award.repeat_num}"> % 用于复投
+                    </td>
+                    <td align="center">
+                        <input type="text" name="rank_award[push_num]" class="input-ssmall" min="-1" value="{$row.rank_award.push_num}">
+                        元
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label">分销奖项：</label>
+    <div class="col-sm-5">
+        <table class="table table-hover  table-bordered">
+            <thead>
+                <tr>
+                    <th class="txt_center">分销身份</th>
+                    <th class="txt_center">级差奖励</th>
+                    <th class="txt_center">平级奖励</th>
+            </thead>
+            <tbody id="d_role_box">
+                {volist name="UsersRole" id="urow" }
+                {if $urow.role_id > 1}
+                <tr>
+                    <td align="center">{$urow.role_name}
+                        <input name="award[{$urow.role_id}][role_id]" type="hidden" value="{$urow.role_id}">
+                    </td>
+                    <td align="center">
+                        
+                        <input type="text" name="award[{$urow.role_id}][num]" class="input-ssmall" min="-1" value="{$row['award'][$urow.role_id]['num']}"> 元
+                    </td>
+                    <td align="center">
+                        直推人级差奖的 <input type="text" name="award[{$urow.role_id}][same_num]" class="input-ssmall" min="-1" value="{$row['award'][$urow.role_id]['same_num']}"> %
+                    </td>
+                </tr>
+                {/if}
+                {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label">联创分红奖：</label>
+    <div class="col-sm-5">
+        {volist name="UsersLevel" id="level" }
+        <input name="level_award[{$level.level_id}][level_id]" type="hidden" value="{$level.level_id}">
+        <input type="text" name="level_award[{$level.level_id}][num]" class="input-ssmall" min="-1" value="{$row['level_award'][$level.level_id]['num']}"> 元
+        {/volist}
+    </div>
+</div>

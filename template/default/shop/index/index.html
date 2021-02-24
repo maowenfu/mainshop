@@ -1,0 +1,203 @@
+{extend name="layouts@base" /}
+{block name="head"}
+<link rel="stylesheet" href="__STATIC__/mobile/default/js/Swiper-4.0.7/swiper.min.css" />
+<link rel="stylesheet" href="__STATIC__/mobile/default/css/index.css" />
+{/block}
+{block name="main" }
+{eq name="$tipsubscribe" value="1"}
+<div class="topTips">
+    <div class="flexBox">
+        <div class="cell_bd"><img src="__STATIC__/mobile/default/images//APPLOGO.png" alt=""><span class="fs28 color_w">您当前还未关注微信公众号</span></div>
+        <div class="cell_ft"><p class="fs28 fw_b color_r">立即关注</p><img src="__STATIC__/mobile/default/images/close_w.png" alt=""></div>
+    </div>
+</div>
+<!-- 扫码关注 -->
+<div class="model topTipSmodel">
+    <div class="modelBG closeModel" ></div>
+    <div class="medelCanten">
+        <div class="codeBox">
+            <img src="{$setting.weixin_qrcode}" alt="">
+            <span class="fs30 color_3 fw_b">长按二维码识别关注</span>
+        </div>
+        <img src="__STATIC__/mobile/default/images/close_wy.png" alt="" class="closeimg closeModel" >
+    </div>
+</div>
+{/eq}
+
+<!--优惠券提示-->
+{include file="bonus/bonus_tip_layer" /}
+
+<div class="page-bd">
+        <div class="selectBox">
+            <a href="{:url('index/search')}" class="selech">
+                <img src="__STATIC__/mobile/default/images/index_01.png" alt=""/>
+                <span class="fs30 color_9">{$setting.shop_index_search_text}</span>
+            </a>
+        </div>
+        <div class="swiperGird" style="background-color: #fff;">
+        <div class="swiper-container swiper1" id="swiper01">
+            <div class="swiper-wrapper">
+                {volist name="slideList" id="slide" }
+                <a href="{$slide.url}" class="swiper-slide" data-bg_color="{$slide.bg_color}">
+                    <img data-src="{$slide.imgurl}" class="swiper-lazy">
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </a>
+                {/volist}
+            </div>
+            <div class="swiper-pagination pagination1"></div>
+        </div>
+        <!-- 功能入口 -->
+        {notempty name="navMenuList"}
+        <div class="girdBox">
+            <div class="gird">
+                <div class='scrllBox {lt name="navMenuList|count" value="5"}fournav{/lt}'>
+                    {volist name="navMenuList" id="nav" }
+                    <a href="{$nav.url}" class="box">
+                        <div><img src="{$nav.imgurl}" alt=""/></div>
+                        <span class="fs26 color_3">{$nav.title}</span>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        {/notempty}
+    </div>
+
+    <!-- banner位 -->
+    <div class="bannerBox">
+        {notempty name="headline"}
+        <!--头条-->
+        <div class="bannerSwiper">
+            <img src="__STATIC__/mobile/default/images/index_icon09.png" alt="">
+            <span class="fs32 fw_b color_3">新闻头条</span>
+            <div class="swiper-container swiper2" id="swiper02">
+                <div class="swiper-wrapper">
+                    {volist name="headline" id="hl" }
+                    <a href="{:url('shop/article/headline')}" class="swiper-slide">{$hl.title}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        {/notempty}
+
+        {foreach name="adList" item="ad"}
+        <div class="banner-{$ad.ad_type} imgBox">
+            {foreach name="$ad.data" item="sub_ad" key="sub_ad_key"}
+            {lt name="sub_ad_key" value="$ad.ad_type"}
+            <a href="{$sub_ad.url|default='javascript:;'}"><img src="{$sub_ad.imgurl}" alt=""></a>
+            {/lt}
+            {/foreach}
+        </div>
+        {/foreach}
+    </div>
+
+    {foreach name="plateList" item="vo"}
+        {if condition="$vo.key eq 'favour'"}
+        <!-- 限时优惠 -->
+        {include file="index/favour" title="$favour" /}
+        {elseif condition="$vo.key eq 'fightgroup'"/}
+        <!-- 拼团 -->
+        {include file="index/fightgroup" title="$fightgroup"  /}
+        {elseif condition="$vo.key eq 'category'"/}
+        <!-- 分类 -->
+        {include file="index/category" /}
+        {elseif condition="$vo.key eq 'goods_tag'"/}
+        <!-- 商品标签 -->
+        {include file="index/goods_tag" /}
+        {/if}
+    {/foreach}
+
+        <!-- 猜你喜欢 -->
+        <div class="youLike hide">
+            <div class="title">
+                <div class="left fs36 color_3 fw_b">猜你喜欢</div>
+                <a href="{:url('goods/index',['is_best'=>1])}" class="right"><span class="fs26 color_9">更多</span><img src="__STATIC__/mobile/default/images/rightIcon.png" alt=""></a>
+            </div>
+            <div class="list">
+                <div class="box">
+                	{volist name="bestGoods" id="goods" }
+                    <a href="{:url('goods/info',['id'=>$goods['goods_id']])}">
+                        <img  src="__STATIC__/mobile/default/images/loading.svg" data-original="{$goods.goods_thumb}" class="lazy" alt="">
+                        <span class="fs30 color_3">{$goods.goods_name}</span>
+                        <div class="color_r fs24 num"><p class="fw_b fm_p">￥</p><em class="fs36">{$goods.exp_price[0]}</em><p>.{$goods.exp_price[1]}</p></div>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+
+          {include file="layouts@bottom" /}
+    </div>
+
+{/block}
+{block name="footer"}
+<script src="__STATIC__/mobile/default/js/Swiper-4.0.7/swiper.min.js"></script>
+<script>
+      $(function() {
+          var swiper1 = createSwiper(1, 'horizontal', 4000, 'fraction');
+          var swiper2 = createSwiper(2, 'vertical', 5000, 'bullets');
+          var swiper3 = createSwiper01();
+          $('.topTips .cell_ft p').on('click',function(){
+              $('.topTipSmodel').show()
+          })
+          $('.topTips .cell_ft img').on('click',function(){
+              $('.topTips').hide()
+          })
+          $('.closeModel').on('click',function() {
+              $('.topTipSmodel').hide()
+          })
+
+      });
+      function createSwiper(index, _direction, time, type) {
+          var swiper = new Swiper(".swiper" + index, {
+              pagination: {
+                  el: ".pagination" + index,
+                  type: type
+              },
+              lazy: {
+                  loadPrevNext: true,
+              },
+              direction: _direction,
+              preloadImages: false,
+              paginationClickable: true,
+              loop: true,
+              autoplay: {
+                  delay: time,
+                  disableOnInteraction: false
+              },
+              onSlideChangeEnd: function (swiper) {
+                  swiper.update(); //swiper更新
+              },
+              on: {
+                  slideChangeTransitionStart: function(){
+                      if(index==1){
+                          var bg_color = $('#swiper01').find('a').eq(this.activeIndex).data('bg_color');
+                          $('.swiperGird').css('background-color',bg_color);
+                      }
+                  },
+              },
+          });
+          return swiper;
+      }
+      function createSwiper01() {
+          var length = $('.groupBox .grouplist .swiper-slide').length;
+          var is_true = length>1?true:false;
+          var el =is_true==true?".pagination3":"null";
+          var swiper = new Swiper(".swiper3", {
+              pagination: {
+                  el: el,
+                  clickable: true
+              },
+              loop: is_true,
+              onSlideChangeEnd: function (swiper) {
+                  swiper.update(); //swiper更新
+              }
+          });
+          return swiper;
+      }
+
+</script>
+{include file="index/ordermessage" /}
+
+{/block}

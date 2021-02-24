@@ -1,0 +1,271 @@
+{extend name="mainadmin@layouts/base" /}
+{block name="main" }
+<header class="header  b-b clearfix">
+    <div class="page-breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="fa fa-ellipsis-v"></i>
+                <strong>基本信息</strong>
+            </li>
+        </ul>
+        <a href="{:url('menus/index')}"  class="btn btn-sm btn-default fr m-t-md m-r"><i class="fa fa-plus m-r-xs"></i>菜单管理</a>
+    </div>
+</header>
+<form class="form-horizontal form-validate form_vbox" method="post" action="{:url('save')}">
+    <section class="vbox">
+        <section class="scrollable  wrapper w-f">
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light m-b">
+                    主体模块
+                </header>
+                <div class="form-group m-t-md">
+                    <label class="control-label">分销功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_distribution]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_distribution']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_distribution]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_distribution']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">微信功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_weixin]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_weixin']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_weixin]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_weixin']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">供应商功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_supplyer]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_supplyer']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_supplyer]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_supplyer']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">渠道代理功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_channel]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_channel']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_channel]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_channel']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <header class="panel-heading bg-light m-b">
+                    商城功能
+                </header>
+                <div class="form-group m-t-md">
+                    <label class="control-label">小程序直播：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_xcx_live_room]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_xcx_live_room']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_xcx_live_room]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_xcx_live_room']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">优惠券功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_bonus]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_bonus']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_bonus]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_bonus']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">拼团功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_fightgroup]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_fightgroup']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_fightgroup]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_fightgroup']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">秒杀功能：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_second]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_second']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_second]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_second']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">积分兑换：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_integral]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_integral']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_integral]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_integral']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">限时优惠：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_favour]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_favour']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_favour]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_favour']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <header class="panel-heading bg-light m-b">
+                    商品相关
+                </header>
+                <div class="form-group m-t-md">
+                    <label class="control-label">购买返还：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_buy_brokerage]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_buy_brokerage']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_buy_brokerage]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_buy_brokerage']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">抵扣积分：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_use_integral]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_use_integral']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_use_integral]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_use_integral']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">赠送积分：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_give_integral]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_give_integral']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_give_integral]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_give_integral']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">会员级别价格：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_ulevel_price]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_ulevel_price']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_ulevel_price]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_ulevel_price']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group m-t-md">
+                    <label class="control-label">分销身份价格：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_urole_price]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_urole_price']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_urole_price]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_urole_price']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group m-t-md">
+                    <label class="control-label">阶梯价：</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_volume_price]" value="0" class="js_undertake"
+                                   type="radio" {$setting['sys_model_shop_goods_volume_price']|tplckval='=0','checked',true}>关闭
+                        </label>
+                        <label class="radio-inline">
+                            <input name="setting[sys_model_shop_goods_volume_price]" value="1" class="js_undertake "
+                                   type="radio" {$setting['sys_model_shop_goods_volume_price']|tplckval='=1','checked'}>开放
+                        </label>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </section>
+        </section>
+        <footer class="footer bg-white b-t p-t">
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-1">
+                    <button type="submit" class="btn btn-primary js_save_submit" data-loading-text="保存中...">保存
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</form>
+{/block}
+{block name="footer"}
+<script type="text/javascript">
+    seajs.use("dist/plupload/file.js")
+</script>
+{/block}

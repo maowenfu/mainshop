@@ -1,0 +1,473 @@
+{extend name="layouts@base" /}
+{block name="head"}
+<link rel="stylesheet" href="__STATIC__/mobile/default/js/Swiper-4.0.7/swiper.min.css"/>
+<link rel="stylesheet" href="__STATIC__/mobile/default/css/goods.css"/>
+{/block}
+{block name='pageType'}Goods{/block}
+{block name="main" }
+
+<div class="page-hd">
+          <div class="header">
+              <div class="header-left back">
+                  <a href="javascript:history.go(-1)" class="left-arrow"></a>
+              </div>
+              <div class="header-title">
+                <span class="fs32 color_9 active">商品</span>
+                  {eq name="setting.shop_goods_comment" value='1'}
+                <span class="fs32 color_9">评价</span>
+                  {/eq}
+                <span class="fs32 color_9">详情</span>  
+              </div>
+          </div>
+      </div>
+
+<div class="page-bd tabBox" id="goods">
+    <!-- 页面内容-->
+    <!-- 商品轮播 -->
+    <div class="swiperBox">
+        <div class="swiper-container swiper1" id="swiper01">
+            <div class="swiper-wrapper">
+                {volist name="imgsList" id="img" }
+                <a href="javascript:;" class="swiper-slide"><img src="{$img.goods_img}" alt=""/></a>
+                {/volist}
+            </div>
+            <div class="swiper-pagination pagination1"></div>
+
+        </div>
+        <div class="timeBox text_box hide" id="prom_box">
+            <p class="fs28 color_w fw_b" id="prom_status_text">--</p>
+            <div class="time start">
+                <p class="fs28 color_w" id="prom_time_text">--</p>
+                <div>00</div><span>:</span>
+                <div>00</div><span>:</span>
+                <div>00</div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品信息 -->
+    <div class="moneyBox">
+        <div class="money_shou">
+        <div class="top">
+            <div class="color_3 fs30 num money"><p class="fw_b fm_p">￥</p>
+                {eq name="goods.is_spec" value="0"}
+                <em class="fs52">{$goods.exp_price[0]}</em>
+                <p>.{$goods.exp_price[1]}</p>
+                {else/}
+                    {if condition="$goods.min_price == $goods.max_price"}
+                        <em class="fs52">{$goods.exp_min_price[0]}</em>
+                        <p>.{$goods.exp_min_price[1]}</p>
+                    {else/}
+                        <em class="fs52">{$goods.exp_min_price[0]}</em>
+                        <p>.{$goods.exp_min_price[1]}</p>
+                        <em class="fs52">~</em>
+                        <em class="fs52">{$goods.exp_max_price[0]}</em>
+                        <p>.{$goods.exp_max_price[1]}</p>
+                    {/if}
+                {/eq}
+            </div>
+           <span class="fs22 color_w BGcolor_r {$goods['is_promote']==0?'hide':''}" id="is_prom_price">活动价</span>
+        </div>
+          <!-- 浮按钮 -->
+        <div class="floatBtn">
+            <a href="{:url('myCode',['goods_id'=>$goods['goods_id']])}" class="share "><img src="__STATIC__/mobile/default/images/goodsIcon01_2.png" alt=""></a>
+            <div class="attention "><img src="__STATIC__/mobile/default/images/goodsIcon01_3{$isCollect==1?'_lh':''}.png" data-no="{$isCollect}" alt=""></div>
+        </div>
+        </div>
+        {gt name="goods.use_integral" value="0"}
+        <div class="color_3 fs20 num money"><p class="fw_b fm_p"> + 积分：</p><em class="fs32 color_r">{$goods.use_integral}</em>分（组合购买，须额外支付积分）</div>
+        {/gt}
+        {gt name="goods.market_price" value="0"}
+        <div class="original fs24 color_9">￥{$goods.market_price}</div>
+        {/gt}
+        <div class="mt10 fw_b fs34 color_3" style="margin-bottom: 10px;">{$goods.goods_name}</div>
+        {volist name="priceList" id="prices" }
+            {volist name="prices" id="price" }
+            <div class="color_3 fs20 num money"><p class="fw_b fm_p">{$price.name}：￥</p><em class="fs22">{$price.price}</em></div>
+            {/volist}
+        {/volist}
+        <div class="tips fs28 color_9 goCoupons">
+            <div style="display: flex;"><span>热销{$goods.sale_count}</span>
+                <p class="hide">运费10元</p></div>
+            <div class="goCouponsBtn" style="display: none;"><span class="fs28 fw_b color_3">领券</span><img src="__STATIC__/mobile/default//images/rightIcon.png" alt="" class="threeRight"></div>
+        </div>
+    </div>
+    {eq name="goods.is_spec" value='1'}
+    <div class="cell">
+        <span class="fs32 fw_b color_3">选择规格</span>
+        <div class="size"><p class="fs28 color_6 selSkuName">请选择规格</p><img
+                src="__STATIC__/mobile/default/images/rightIcon.png" alt="" class="threeRight"></div>
+    </div>
+    {/eq}
+    <!-- 店铺 -->
+    <div class="shopName bor_b" style="display: none">
+        <div><img src="__STATIC__/mobile/default/images/shoplogo.png" alt=""><span class="fs32 fw_b color_3">xxxx</span>
+        </div>
+        <img src="__STATIC__/mobile/default/images/rightIcon.png" alt="" class="threeRight">
+    </div>
+   <!-- 评论 -->
+        <div class="comment ">
+            {eq name="setting.shop_goods_comment" value='1'}
+            <a class="top" href="{:url('comment',['goods_id'=>$goods['goods_id']])}">
+              <div class="fs32 color_3"><span class="fw_b">用户评价</span><p class="color_9 commentNum">(0)</p></div>
+              <div><span class="fs26 color_9">更多</span><img src="__STATIC__/mobile/default/images/rightIcon.png" alt="" class="threeRight"></div>
+           </a>
+           <div class="commentBox hide">
+              <div class="user">
+                <img src="" alt="">
+                <div class="info">
+                  <p class="fs28 color_3 uname"></p>
+                  <span class="fs24 color_9 time"></span>
+                </div>
+              </div>
+              <div class="comtext fs28 color_3 line_twe content">
+                  
+              </div>
+              <div class="comimg">
+              </div>              
+           </div>
+            {/eq}
+        </div>
+        <!-- 图文 -->
+        <div class="imgText">
+          <div class="title fw_b fs32 color_3">商品详情</div>
+          {$goods.m_goods_desc|raw}
+        </div>
+
+</div>
+
+<!-- 弹出规格选择 -->
+{include file="goods/sku" /}
+
+<!-- 弹出领取优惠券 -->
+{include file="goods/bonus_layer" /}
+
+<!-- 底部 -->
+<div class="page-ft">
+    <div class="left">
+        <a href="/"><img src="__STATIC__/mobile/default/images/bottom_icon01.png" alt=""><span
+                class="fs22 color_6">首页</span></a>
+        <div v5_href><img src="__STATIC__/mobile/default/images/goodsIcon02.png" alt=""><span class="fs22 color_6" >客服</span>
+        </div>
+        <a href="{:url('flow/cart')}"><em class="BGcolor_r fs22 color_w cartNum">{$cartInfo.num|intval}</em><img
+                src="__STATIC__/mobile/default/images/bottom_icon04.png" alt=""><span
+                class="fs22 color_6">购物车</span></a>
+    </div>
+    <div class="right">
+        <div class="fs28 color_w fw_b BGcolor_3 buyBtn" data-type="show">加入购物车</div>
+        <div class="fs28 color_w fw_b BGcolor_r butt buyBtn" data-type="show"> <span class="fs28 color_w fw_b buy_m">立即购买</span></div>
+    </div>
+    <input type="hidden" name="goods_id" value="{$goods['goods_id']}">
+    <input type="hidden" name="sku_id" value="">
+    <input type="hidden" name="prom_type" id="prom_type" value="">
+    <input type="hidden" name="prom_id"  id="prom_id" value="">
+</div>
+{/block}
+{block name="footer"}
+<script src="__STATIC__/mobile/default/js/Swiper-4.0.7/swiper.min.js"></script>
+<script>
+$(function () {
+	swiper1 = createSwiper(1);
+	initActivity();
+
+	// 关注
+	$('.attention').on('click', function () {
+		var imgObj = $(this).find('img');
+		var status = imgObj.data('no');
+		jq_ajax('{:url("shop/api.goods/collect")}', 'goods_id={$goods.goods_id}', function (res) {
+			if (res.code == 0) {
+				_alert(res.msg);
+				return false;
+			}
+			if (status == 0) {
+				imgObj.attr('src', '__STATIC__/mobile/default/images/goodsIcon01_3_lh.png')
+				imgObj.data('no', '1')
+			} else {
+				imgObj.attr('src', '__STATIC__/mobile/default/images/goodsIcon01_3.png')
+				imgObj.data('no', '0')
+			}
+		});
+	})
+	jq_ajax('{:url("shop/api.comment/getListByGoods",["goods_id"=>$goods["goods_id"],"limit"=>1])}','',function(res){
+		if (res.code == 0){
+			return false;	
+		}
+		if (res.data.total_count > 0){
+		    $('.commentBox').removeClass('hide');
+        }
+		$('.commentNum').html('('+res.data.total_count+')');
+		if (res.data.total_count > 0){
+			$('.commentBox .user img').attr('src',res.data.list[0].headimgurl?res.data.list[0].headimgurl:'__STATIC__/mobile/default/images/defheadimg.jpg');
+			$('.commentBox .user .uname').html(res.data.list[0].user_name);
+			$('.commentBox .user .time').html(res.data.list[0]._time);
+			$('.commentBox  .content').html(res.data.list[0].content);
+			$.each(res.data.list[0].imgs,function(i,v){
+				$('.commentBox .comimg').append('<img src="'+v.thumbnail+'">');
+			})
+		}
+	})
+
+	// 滚动出现tab
+	$('#goods').scroll(function(){
+	  var scrolltop=$(this).scrollTop()
+	  // console.log($('.comment').offset().top,scrolltop)
+	  if(scrolltop>100){
+		$('.header-title').css('display','flex');
+		$('.header-left').removeClass('back')
+		$('.page-hd').css('background-color','#fff')
+		$('.header').addClass('bgShow');
+		if($('.comment').offset().top<$('.page-hd').height()){
+		  $('.header-title span').eq(1).addClass('active')
+		  $('.header-title span').eq(1).siblings().removeClass('active')
+		  if($('.imgText').offset().top<$('.page-hd').height()){
+			$('.header-title span').eq(2).addClass('active')
+			$('.header-title span').eq(2).siblings().removeClass('active')
+		  }else{
+			$('.header-title span').eq(1).addClass('active')
+			$('.header-title span').eq(1).siblings().removeClass('active')
+		  }
+		}else{
+		  $('.header-title span').eq(0).addClass('active')
+		  $('.header-title span').eq(0).siblings().removeClass('active')
+		}
+
+	  }else{
+		$('.header-title').css('display','none');
+		$('.header-left').addClass('back')
+		$('.page-hd').css('background-color','transparent')
+		$('.header').removeClass('bgShow')
+	  }
+
+	})
+	  //tab切换
+	$('.header-title span').on('click',function(){
+	  var index=$(this).index()
+	  var topHeight=$('.page-hd').height()
+	  var commentTop= $('.comment').offset().top+$('#goods').scrollTop()-topHeight+1
+	  var imgTextTop= $('.imgText').offset().top+$('#goods').scrollTop()-topHeight+1
+		if(index==0){
+		  $("#goods").animate({scrollTop:0}, 300)
+		}else if(index==1){
+		  $("#goods").animate({scrollTop:commentTop+'px'}, 300)
+		}else{
+		  $("#goods").animate({scrollTop:imgTextTop+'px'}, 300)
+		}
+	})
+	//点击购买按钮
+	$('.buyBtn ').on('click', function () {
+		var obj = $(this);
+		if (obj.data('type') == 'show') {
+			$('.modelSize').show();
+			selsku();
+		} else {
+			addToCart(obj);
+		}
+	})
+})
+//获取购物车
+jq_ajax("{:url('shop/api.flow/getCartInfo')}", '',function (res) {
+	if (res.code == 0)  return false;
+	$('.cartNum').html(res.cartInfo.num);
+});
+//添加到购物车
+function addToCart(obj) {
+	var arr = new Object;
+	arr.goods_id = obj.data('goods_id');
+	arr.specifications = obj.data('sku');
+    if (typeof(arr.specifications) != 'undefined'){
+        arr.sku_id = sub_goods[arr.specifications].sku_id;
+    }
+	arr.type = obj.data('type');
+	arr.number = $('#buynumber').val();
+    arr.prom_type = $('#prom_type').val();
+    arr.prom_id = $('#prom_id').val();
+
+	var res = jq_ajax("{:url('shop/api.flow/addCart')}", arr);
+    console.log(res)
+	if (res.code == 1) {
+		if (arr.type == 'onbuy') {
+			window.location = '{:_url("flow/checkout",array("rec_id"=>"【res.rec_id】"))}';
+			return false;
+		}
+		$('.cartNum').html(res.cartInfo.num);
+	}
+	if(res.code==2){
+        if (res.msg) _alert(res.msg);
+        return false;
+    }
+	if (arr.type == 'onbuy') {
+        if (res.msg) _alert(res.msg,function(){
+            var goodsId = "{$goods.goods_id}";
+            window.location.href = '{:_url("member/passport/login",array("goods_id"=>"【goodsId】"))}';
+        });
+        return;
+    }
+	if (res.msg) _alert(res.msg);
+}
+
+function createSwiper(index) {
+	var swiper = new Swiper(".swiper" + index, {
+		pagination: {
+			el: ".pagination" + index
+		},
+		paginationClickable: true,
+		observer: true,
+		observeParents: true,
+		loop: true,
+		autoplay: {
+			delay: 1500,
+			stopOnLastSlide: false,
+			disableOnInteraction: false
+		},
+		onSlideChangeEnd: function (swiper) {
+			swiper.update(); //swiper更新
+		}
+	});
+	return swiper;
+}
+function closeModel(obj){
+    $(obj).parents('.model').hide()
+}
+
+/**
+ * 初始化商品活动
+ */
+function initActivity() {
+    var arr = new Object;
+    arr.goods_id = $('input[name=goods_id]').val();
+    var sku = [];
+    $('.sku_list .tag_active').each(function(){
+        var skukey = $(this).data('skukey');
+        sku.push(skukey);
+    });
+    if(sku.length>0){
+        var _sku = sku.join(":");
+        console.log(_sku);
+        arr.sku_id=sub_goods[_sku].sku_id;
+    }
+    //获取相关活动
+    jq_ajax("{:url('shop/api.goods/checkActivity')}", arr,function (res) {
+       if(res.code==1){
+           console.log(res);
+           activityTheme(res.data);
+       }
+    });
+}
+//活动相关显示
+function activityTheme(data){
+
+    if(data.activity_is_on==1){
+        if(data.status==1){
+            $('#prom_box').css('background','#f65236');
+            $('#prom_status_text').text('限时优惠中');
+            $('#prom_time_text').text('距结束');
+
+            if(data.goods.stock<=0){
+                $('#prom_box').css('background','#333333');
+                $('#prom_status_text').text('该商品活动库存已售罄');
+                buyBTnTheme(data,0);
+            }
+
+            if(data.goods.is_spec==1){
+                if(data.goods_info){
+                    if(data.goods_info.goods_number<0)
+                    $(".tan_text").text("该规格活动库存已售罄，您将以原价购买！");
+                    $(".tan_text").show();
+                    buyBTnTheme(data,0);
+                }
+            }
+
+        }else if(data.status==0){
+            $('#prom_box').css('background','#36b12a');
+            $('#prom_status_text').text('限时优惠即将开始');
+            $('#prom_time_text').text('距开始');
+        }
+
+        $("#is_prom_price").text('活动价').removeClass('hide');
+        if(data.goods_info){
+            $("#is_prom_price_sku").text('活动价').removeClass('hide');
+            $(".tan_text").hide();
+
+            $('.skuPrice').find('em').html(data.goods_info.exp_price[0]);
+            $('.skuPrice').find('p').html('.'+data.goods_info.exp_price[1]);
+            $('.moneyPrimary').html('￥'+data.goods_info.market_price);
+
+            buyBTnTheme(data,1);
+        }else{
+            $("#is_prom_price_sku").text('').addClass('hide');
+            $(".tan_text").text("该规格不参与优惠！")
+            $(".tan_text").show();
+            buyBTnTheme(data,0);
+        }
+
+        if(data.goods.is_spec==1){
+            var html = '<p class="fw_b fm_p">￥</p><em class="fs52">'+data.goods.exp_min_price[0]+'</em><p>.'+data.goods.exp_min_price[1]+'</p><em class="fs52">~</em><em class="fs52">'+data.goods.exp_max_price[0]+'</em><p>.'+data.goods.exp_max_price[1]+'</p>';
+        }else{
+            var html = '<p class="fw_b fm_p">￥</p><em class="fs52">'+data.goods.exp_min_price[0]+'</em><p>.'+data.goods.exp_min_price[1]+'</p>';        }
+        $('.moneyBox .money').html(html);
+
+        $('#prom_box').removeClass('hide');//显示优惠活动
+        codeButton($('.time div'),data.diff_time,data.status);//倒计时
+    }else{
+        $('#prom_box').addClass('hide');
+        $("#is_prom_price").text('').addClass('hide');
+        $("#is_prom_price_sku").text('').addClass('hide');
+        buyBTnTheme(data,0);
+    }
+}
+//购买按钮显示
+function buyBTnTheme(data,status){
+    if(status==0){
+        $('#prom_type').val(0);
+        $('#prom_id').val(0);
+        $('.butt ').html('<span class="fs28 color_w fw_b buy_m">立即购买</span>');
+    }else{
+        $('#prom_type').val(data.prom_type);
+        $('#prom_id').val(data.prom_id);
+        var goods_price = data.goods_info.goods_price*1;
+        var shop_price = data.goods_info.market_price*1;
+        var html='<span class="fs28 color_w fw_b buy_m">购买￥'+goods_price+'</span>';
+        html+='<span><del class="fs24 color_f o_5">￥'+shop_price+'</del></span>';
+        $('.butt ').html(html);
+    }
+}
+
+//活动倒计时
+function codeButton(obj,time,status) {
+    var code = obj;
+    var time = parseInt(time) //总秒数
+    var hour = time % 3600 == 0 ? parseInt(time / 3600) - 1 : parseInt(time / 3600); //shi
+    var min = time % 60 == 0 ? parseInt((time - hour * 3600) / 60) - 1 : parseInt(time / 3600) > 0 ? parseInt((time - hour * 3600) / 60) : parseInt(time / 60); //fen
+    var second = time % 60 == 0 ? 59 : time % 60 //miao
+    code.eq(0).text(hour > 9 ? hour : '0' + hour)
+    code.eq(1).text(min > 9 ? min : '0' + min)
+    code.eq(2).text(second > 9 ? second : '0' + second)
+    set = setInterval(function() {
+        code.eq(0).text(hour > 9 ? hour : '0' + hour)
+        code.eq(1).text(min > 9 ? min : '0' + min)
+        code.eq(2).text(--second > 9 ? second : '0' + second);
+        if(hour<=0&&min<=0&&second<=0){
+            var prom_type = $('#prom_type').val();
+            if(prom_type==1&&status==1){
+                $('#prom_box').css('background','#333333');
+                $('#prom_status_text').text('限时优惠已结束');
+            }else if(prom_type==1&&status==0){
+                initActivity();
+            }
+        }
+        if (second == 0) {
+            second = 60
+            min < 0 ? 0 : --min
+            if (min == 0 && hour > 0) {
+                min = 59
+                hour <= 0 ? 0 : --hour
+            }
+        }
+    }, 1000);
+    setTimeout(function() {
+        clearInterval(set);
+    }, 1000 * time);
+}
+
+
+</script>
+{/block}

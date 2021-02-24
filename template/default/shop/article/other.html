@@ -1,0 +1,16 @@
+{extend name="layouts@base" /}
+{block name="head"}
+<link rel="stylesheet" href="__STATIC__/mobile/default/css/my.css" />
+
+{block name="main" }
+<div class="page-bd">
+    <!-- 页面内容-->
+    <div class="detailsBox"  style="padding: 20px;">
+        <div class="content">
+            {$content|raw|html_entity_decode}
+        </div>
+    </div>{include file="layouts@bottom" /}
+</div>
+
+
+{/block}

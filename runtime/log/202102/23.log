@@ -1,0 +1,1145 @@
+---------------------------------------------------------------
+
+[2021-02-23T20:45:11+08:00] 127.0.0.1 POST main_shop.test.com/shop/api.bonus/getuntipbonus.html
+[运行时间：0.077978s] [吞吐率：12.82req/s] [内存消耗：2,209.55kb] [文件加载：85]
+[ error ] [8]未定义数组索引: user_id[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+[ error ] [8]未定义数组索引: bonus_tip[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+---------------------------------------------------------------
+
+[2021-02-23T20:45:21+08:00] 127.0.0.1 POST main_shop.test.com/shop/api.bonus/getuntipbonus.html
+[运行时间：0.050078s] [吞吐率：19.97req/s] [内存消耗：2,209.87kb] [文件加载：85]
+[ error ] [8]未定义数组索引: user_id[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+[ error ] [8]未定义数组索引: bonus_tip[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+---------------------------------------------------------------
+
+[2021-02-23T20:45:23+08:00] 127.0.0.1 POST main_shop.test.com/shop/api.bonus/getuntipbonus.html
+[运行时间：0.049575s] [吞吐率：20.17req/s] [内存消耗：2,209.87kb] [文件加载：85]
+[ error ] [8]未定义数组索引: user_id[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+[ error ] [8]未定义数组索引: bonus_tip[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+---------------------------------------------------------------
+
+[2021-02-23T20:45:31+08:00] 127.0.0.1 POST main_shop.test.com/shop/api.bonus/getuntipbonus.html
+[运行时间：0.044373s] [吞吐率：22.54req/s] [内存消耗：2,209.87kb] [文件加载：85]
+[ error ] [8]未定义数组索引: user_id[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+[ error ] [8]未定义数组索引: bonus_tip[F:\WWW\M\application\shop\controller\api\Bonus.php:90]
+---------------------------------------------------------------
+
+[2021-02-23T20:45:56+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.order/index.html
+[运行时间：0.067922s] [吞吐率：14.72req/s] [内存消耗：3,508.50kb] [文件加载：100]
+[ error ] [8]未定义变量: error_count[F:\WWW\M\runtime\temp\052c9d7720251380f17f904c3d26ff40.php:219]
+---------------------------------------------------------------
+
+[2021-02-23T20:46:02+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.316333s] [吞吐率：3.16req/s] [内存消耗：3,995.10kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+---------------------------------------------------------------
+
+[2021-02-23T20:48:09+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.award/info.html
+[运行时间：0.069088s] [吞吐率：14.47req/s] [内存消耗：3,350.88kb] [文件加载：100]
+[ error ] [8]未定义变量: limitBuyNum[F:\WWW\M\runtime\temp\f4e165597351ce1d6701e7e16d5108f3.php:368]
+---------------------------------------------------------------
+
+[2021-02-23T20:49:32+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.107595s] [吞吐率：9.29req/s] [内存消耗：3,735.56kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1267]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1311]
+---------------------------------------------------------------
+
+[2021-02-23T20:51:51+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.136897s] [吞吐率：7.30req/s] [内存消耗：3,975.25kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1270]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1314]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1314]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1314]
+---------------------------------------------------------------
+
+[2021-02-23T20:56:19+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.211630s] [吞吐率：4.73req/s] [内存消耗：4,000.45kb] [文件加载：111]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:234]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:238]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T20:56:32+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.114012s] [吞吐率：8.77req/s] [内存消耗：3,977.30kb] [文件加载：110]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:234]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:238]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T20:56:52+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.126798s] [吞吐率：7.89req/s] [内存消耗：3,977.30kb] [文件加载：110]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:234]
+[ error ] [8]未定义数组索引: goods_type[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:238]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T20:58:10+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.111282s] [吞吐率：8.99req/s] [内存消耗：3,736.91kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T20:58:45+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.119592s] [吞吐率：8.36req/s] [内存消耗：3,976.63kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T20:59:28+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.126004s] [吞吐率：7.94req/s] [内存消耗：4,000.62kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:04:03+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.129154s] [吞吐率：7.74req/s] [内存消耗：3,994.80kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:05:00+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.118047s] [吞吐率：8.47req/s] [内存消耗：3,986.16kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:05:23+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.113265s] [吞吐率：8.83req/s] [内存消耗：3,986.16kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:06:12+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.131027s] [吞吐率：7.63req/s] [内存消耗：3,994.43kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:06:32+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.169484s] [吞吐率：5.90req/s] [内存消耗：4,017.54kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:07:00+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.118568s] [吞吐率：8.43req/s] [内存消耗：3,994.45kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:07:21+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.132038s] [吞吐率：7.57req/s] [内存消耗：3,994.55kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:09:30+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.125862s] [吞吐率：7.95req/s] [内存消耗：3,994.52kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:09:44+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.124529s] [吞吐率：8.03req/s] [内存消耗：3,994.79kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:10:25+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.131733s] [吞吐率：7.59req/s] [内存消耗：3,995.78kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:10:52+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.119798s] [吞吐率：8.35req/s] [内存消耗：3,995.86kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:11:13+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.122861s] [吞吐率：8.14req/s] [内存消耗：3,995.83kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:11:43+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.125090s] [吞吐率：7.99req/s] [内存消耗：3,995.75kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:11:51+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.114579s] [吞吐率：8.73req/s] [内存消耗：3,995.73kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:12:10+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.107409s] [吞吐率：9.31req/s] [内存消耗：3,995.73kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:14:40+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.role/index.html
+[运行时间：0.068231s] [吞吐率：14.66req/s] [内存消耗：3,097.80kb] [文件加载：97]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+---------------------------------------------------------------
+
+[2021-02-23T21:14:44+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.role/index.html
+[运行时间：0.067154s] [吞吐率：14.89req/s] [内存消耗：3,096.73kb] [文件加载：97]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+---------------------------------------------------------------
+
+[2021-02-23T21:14:45+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.role/index.html
+[运行时间：0.064627s] [吞吐率：15.47req/s] [内存消耗：3,096.73kb] [文件加载：97]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+---------------------------------------------------------------
+
+[2021-02-23T21:16:54+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.role/index.html
+[运行时间：0.094047s] [吞吐率：10.63req/s] [内存消耗：3,165.88kb] [文件加载：100]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+[ error ] [8]未定义数组索引: level_name[F:\WWW\M\runtime\temp\2b22970ec6118ea1ee1250782f36cfbe.php:213]
+---------------------------------------------------------------
+
+[2021-02-23T21:16:55+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/distribution/sys_admin.award/info.html
+[运行时间：0.083086s] [吞吐率：12.04req/s] [内存消耗：3,218.94kb] [文件加载：100]
+[ error ] [8]未定义变量: limitBuyNum[F:\WWW\M\runtime\temp\f4e165597351ce1d6701e7e16d5108f3.php:368]
+---------------------------------------------------------------
+
+[2021-02-23T21:17:01+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.119334s] [吞吐率：8.38req/s] [内存消耗：3,996.73kb] [文件加载：110]
+[ error ] [8]Array to string conversion[F:\WWW\M\application\member\model\UsersLevelModel.php:30]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:17:02+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.099270s] [吞吐率：10.07req/s] [内存消耗：3,743.32kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:17:17+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.105870s] [吞吐率：9.45req/s] [内存消耗：3,991.85kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:20:50+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.119711s] [吞吐率：8.35req/s] [内存消耗：3,991.98kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:21:50+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.104806s] [吞吐率：9.54req/s] [内存消耗：3,743.50kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:24:55+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.128285s] [吞吐率：7.80req/s] [内存消耗：3,993.95kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:25:04+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.113103s] [吞吐率：8.84req/s] [内存消耗：3,993.93kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:25:21+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.111746s] [吞吐率：8.95req/s] [内存消耗：3,993.96kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:26:04+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.114849s] [吞吐率：8.71req/s] [内存消耗：3,994.04kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:26:15+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.109953s] [吞吐率：9.09req/s] [内存消耗：3,993.55kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:27:40+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.188695s] [吞吐率：5.30req/s] [内存消耗：4,020.29kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:29:21+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.117785s] [吞吐率：8.49req/s] [内存消耗：3,997.79kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:31:57+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/mainAdmin/attachment/editer_upload/ckv/ac0bc4b7d4fc44ece11420a933b7f33f_1614086961.html?dir=image
+[运行时间：0.049171s] [吞吐率：20.34req/s] [内存消耗：2,035.97kb] [文件加载：83]
+[ error ] [8]Use of undefined constant AUID - assumed 'AUID'[F:\WWW\M\application\commonAdmin.php:61]
+---------------------------------------------------------------
+
+[2021-02-23T21:32:00+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.091037s] [吞吐率：10.98req/s] [内存消耗：3,183.36kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+---------------------------------------------------------------
+
+[2021-02-23T21:33:33+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.125786s] [吞吐率：7.95req/s] [内存消耗：3,997.78kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:34:36+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/mainAdmin/attachment/editer_upload/ckv/3715443b673edb865a14ae3c8352f22d_1614087213.html?dir=image
+[运行时间：0.046111s] [吞吐率：21.69req/s] [内存消耗：2,035.97kb] [文件加载：83]
+[ error ] [8]Use of undefined constant AUID - assumed 'AUID'[F:\WWW\M\application\commonAdmin.php:61]
+---------------------------------------------------------------
+
+[2021-02-23T21:34:37+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.075844s] [吞吐率：13.18req/s] [内存消耗：3,183.72kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+---------------------------------------------------------------
+
+[2021-02-23T21:41:43+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.188323s] [吞吐率：5.31req/s] [内存消耗：4,032.74kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:43:45+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.122889s] [吞吐率：8.14req/s] [内存消耗：4,007.44kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:45:15+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.125676s] [吞吐率：7.96req/s] [内存消耗：4,010.39kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:45:40+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.113406s] [吞吐率：8.82req/s] [内存消耗：4,007.45kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:45:55+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.120775s] [吞吐率：8.28req/s] [内存消耗：4,007.44kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:48:20+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.149497s] [吞吐率：6.69req/s] [内存消耗：3,775.36kb] [文件加载：109]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:50:16+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.083604s] [吞吐率：11.96req/s] [内存消耗：3,192.48kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+[ error ] [8]未定义数组索引: rank_award_value[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:466]
+[ error ] [8]未定义数组索引: award_value[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:467]
+---------------------------------------------------------------
+
+[2021-02-23T21:50:36+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.082952s] [吞吐率：12.06req/s] [内存消耗：3,192.49kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+[ error ] [8]未定义数组索引: rank_award_value[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:466]
+[ error ] [8]未定义数组索引: award_value[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:467]
+---------------------------------------------------------------
+
+[2021-02-23T21:51:17+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.114213s] [吞吐率：8.76req/s] [内存消耗：3,758.73kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:51:51+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.180874s] [吞吐率：5.53req/s] [内存消耗：4,032.88kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:52:32+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.077409s] [吞吐率：12.92req/s] [内存消耗：3,191.48kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+---------------------------------------------------------------
+
+[2021-02-23T21:53:45+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.113994s] [吞吐率：8.77req/s] [内存消耗：3,758.91kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:54:03+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.100248s] [吞吐率：9.98req/s] [内存消耗：3,758.91kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:54:18+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.120203s] [吞吐率：8.32req/s] [内存消耗：4,007.62kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:56:58+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.127052s] [吞吐率：7.87req/s] [内存消耗：4,008.24kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:57:07+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.100563s] [吞吐率：9.94req/s] [内存消耗：3,759.41kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:59:18+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.121834s] [吞吐率：8.21req/s] [内存消耗：4,013.23kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T21:59:32+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.093284s] [吞吐率：10.72req/s] [内存消耗：3,759.91kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:00:26+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.110180s] [吞吐率：9.08req/s] [内存消耗：4,013.48kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:00:41+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.125715s] [吞吐率：7.95req/s] [内存消耗：4,013.46kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:01:31+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.119701s] [吞吐率：8.35req/s] [内存消耗：4,013.51kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:01:47+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.115945s] [吞吐率：8.62req/s] [内存消耗：4,013.46kb] [文件加载：110]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:01:58+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.178836s] [吞吐率：5.59req/s] [内存消耗：4,038.80kb] [文件加载：111]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:03:46+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.116156s] [吞吐率：8.61req/s] [内存消耗：3,760.16kb] [文件加载：108]
+[ error ] [8]未定义变量: limit_user_level[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1252]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: limit_user_role[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [2]in_array() expects parameter 2 to be array, null given[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1285]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+[ error ] [8]未定义变量: VolumePriceList[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1329]
+---------------------------------------------------------------
+
+[2021-02-23T22:05:03+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.076145s] [吞吐率：13.13req/s] [内存消耗：3,191.75kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+---------------------------------------------------------------
+
+[2021-02-23T22:06:35+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.083135s] [吞吐率：12.03req/s] [内存消耗：3,192.52kb] [文件加载：92]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+---------------------------------------------------------------
+
+[2021-02-23T22:06:52+08:00] 127.0.0.1 POST main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info.html
+[运行时间：0.170331s] [吞吐率：5.87req/s] [内存消耗：3,325.75kb] [文件加载：100]
+[ error ] [8]未定义数组索引: buy_brokerage[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:335]
+[ error ] [8]未定义数组索引: level_price_type[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:592]
+[ error ] [8]未定义数组索引: role_price_type[F:\WWW\M\application\shop\controller\sys_admin\Goods.php:609]
+---------------------------------------------------------------
+
+[2021-02-23T22:10:13+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info/goods_id/1.html
+[运行时间：0.160296s] [吞吐率：6.24req/s] [内存消耗：4,087.06kb] [文件加载：114]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1553]
+---------------------------------------------------------------
+
+[2021-02-23T22:10:18+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info/goods_id/1.html
+[运行时间：0.126098s] [吞吐率：7.93req/s] [内存消耗：3,828.55kb] [文件加载：112]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]未定义数组索引: same_num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1553]
+---------------------------------------------------------------
+
+[2021-02-23T22:10:57+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info/goods_id/1.html
+[运行时间：0.162690s] [吞吐率：6.15req/s] [内存消耗：4,086.18kb] [文件加载：114]
+[ error ] [8]Use of undefined constant num - assumed 'num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Use of undefined constant same_num - assumed 'same_num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]Use of undefined constant num - assumed 'num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Use of undefined constant same_num - assumed 'same_num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]Use of undefined constant num - assumed 'num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1536]
+[ error ] [8]Use of undefined constant same_num - assumed 'same_num'[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]Array to string conversion[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1539]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1553]
+---------------------------------------------------------------
+
+[2021-02-23T22:11:38+08:00] 127.0.0.1 GET main_shop.test.com/zpadmin.php/shop/sys_admin.goods/info/goods_id/1.html
+[运行时间：0.154049s] [吞吐率：6.49req/s] [内存消耗：4,080.66kb] [文件加载：114]
+[ error ] [8]未定义数组索引: num[F:\WWW\M\runtime\temp\57e709616c03a4cb326f8e2ec038591d.php:1553]

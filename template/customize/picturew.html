@@ -1,0 +1,54 @@
+{if condition="$diyInfo.params.row == 1"}
+<div class="fui-cube" style="background: {$diyInfo.style.background};">
+    <div class="fui-cube-left" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px; padding-right: 0;">
+        <a href="{$_data[0][linkurl]|default='javascript:;'}" data-nocache="true"><img data-lazy="{$_data[0][imgurl]}" /></a>
+    </div>
+    <div class="fui-cube-right" >
+        <div class="fui-cube-right1" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px; padding-bottom: 0;">
+            <a href="{$_data[1][linkurl]|default='javascript:;'}" data-nocache="true"><img data-lazy="{$_data[1][imgurl]}" /></a>
+        </div>
+        <div class="fui-cube-right2" >
+            <div class="left" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px; padding-right: 0;">
+                <a href="{$_data[2][linkurl]|default='javascript:;'}" data-nocache="true"><img data-lazy="{$_data[2][imgurl]}" /></a>
+            </div>
+            <div class="right" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px;">
+                <a href="{$_data[3][linkurl]|default='javascript:;'}" data-nocache="true"><img data-lazy="{$_data[3][imgurl]}" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+{else/}
+    {if condition="$diyInfo.params.showtype == 0"}
+        <div class="fui-picturew row-{$diyInfo.params.row}" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px; background:{$diyInfo.style.background} ;">
+            {volist name="$diyInfo.data" id="vo"}
+            <div class="item" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px;">
+                <a href="{$vo.linkurl|default='javascript:;'}" data-nocache="true"><img data-lazy="{$vo.imgurl}"></a>
+            </div>
+           {/volist}
+        </div>
+    {else/}
+        <div class="swiper swiper-{$diyInfo._key}" data-element=".swiper-{$diyInfo._key}" data-view="1" data-btn="true">
+            <div class="swiper-container fui-picturew row-{$diyInfo.params.row}" style="padding:{$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px; background: {$diyInfo.style.background};">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {volist name="$diyInfo.data" id="vo" mod="$diyInfo.style.pagenum"}
+                            {eq name="mod" value="0"}
+                                {gt name="i" value="1"}</div><div class="swiper-slide">{/gt}
+                            {/eq}
+                            <div class="item" style="padding: {$diyInfo.style.paddingtop}px {$diyInfo.style.paddingleft}px;">
+                                <a href="{$vo.linkurl|default='javascript:;'}" data-nocache="true"><img src="{$vo.imgurl}"></a>
+                            </div>
+                        {/volist}
+                    </div>
+                </div>
+                {eq name="$diyInfo.style.showdot" value="1"}
+                    <div class="swiper-pagination" style="position: absolute; bottom: 0;"></div>
+                {/eq}
+                {eq name="$diyInfo.style.showbtn" value="1"}
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                {/eq}
+            </div>
+        </div>
+    {/if}
+{/if}
