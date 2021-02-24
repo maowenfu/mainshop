@@ -19,7 +19,7 @@
 <td>{$vo.mobile}</td>
 <td>{$vo.nick_name}</td>
 <td>{if condition = "$vo.pid > 0" }{$vo.pid} - {$vo.pid|userInfo}{else/}没有上级{/if}</td>
-<td>{$vo.total_integral|userLevel} / 
+<td>{$vo.level_id|userLevel} / 
 {eq name="vo.role_id" value="0"}
 粉丝
 {else/}

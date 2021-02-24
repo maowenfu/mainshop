@@ -38,9 +38,7 @@ class PaymentModel extends BaseModel
             $is_wx = session('is_wx');
             $is_xcx = isXcxWebView();//是否小程序webview
 			foreach ($data as $key=>$row){
-				if ($row['status'] == 0) {
-                    unset($data[$key]);
-                }elseif ($is_xcx == true) {
+				if ($is_xcx == true) {
                     if ($row['pay_id'] > 3 && $row['pay_code'] != 'miniAppPay') {
                         unset($data[$key]);
                     }

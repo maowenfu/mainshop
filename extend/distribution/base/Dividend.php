@@ -12,6 +12,7 @@ use think\Db;
 use app\member\model\UsersModel;
 use app\shop\model\OrderModel;
 use app\shop\model\OrderGoodsModel;
+use app\shop\model\GoodsModel;
 use app\distribution\model\DividendAwardModel;
 use app\distribution\model\DividendRoleModel;
 
@@ -60,7 +61,17 @@ class Dividend extends BaseModel
         //先计算佣金
         if ($type == 'add' || $type == 'change') {//写入分佣，普通订单下单时执行
             $goodsList = (new OrderGoodsModel)->where('order_id', $orderInfo['order_id'])->select()->toArray();
-            $upData = $this->saveLog($orderInfo, $goodsList, $status);//佣金计算
+
+            if ($orderInfo['order_type'] == 4) {
+                $upData = $this->saveLog($orderInfo, $goodsList, $status);//佣金计算
+                // $ShopRankModel = new \app\shop\model\ShopRankModel();
+                // $res = $ShopRankModel->setRankOrder($orderInfo);
+                // // if ($res !== true) {
+                // //     return false;
+                // // }
+            
+                
+            }
             if (is_array($upData) == false) return false;
             if ($status == $OrderModel->config['DD_PAYED']) {
                 $res = $this->evalLevelUp($orderInfo);//升级处理
@@ -131,81 +142,13 @@ class Dividend extends BaseModel
     public function saveLog(&$orderInfo, &$goodsList, $status = 0)
     {
         $returnArr['dividend_amount'] = 0;
-        $awardList = (new DividendAwardModel)->order('award_type DESC')->select();//获取全部奖项目,按类型倒序，先处理管理奖
-        if (empty($awardList->isEmpty())) return $returnArr;
 
         $nowLevel = 0;//当前处理级别
-        $nowLevelOrdinary = [];//普通分销当前处理级别，普通分销有逐级计算和无限级计算，如果无限级，不满条件将一直最后的上级
+        // $nowLevelOrdinary = [];//普通分销当前处理级别，普通分销有逐级计算和无限级计算，如果无限级，不满条件将一直最后的上级
         $assignAwardNum = [];//记录已分出去的管理奖金额
         $assignAwardUser = [];//记录已领管理奖的用户
 
         $buyUserInfo = $this->UsersModel->info($orderInfo['user_id']);//获取购买会员信息
-
-        //身份佣金处理
-        if ($orderInfo['d_type'] == 'role_order') {
-            foreach ($awardList as $key => $award) {
-                $parentId = $buyUserInfo['pid'];//获取购买会员直属上级ID
-                if ($award['goods_limit'] != 3) {//非指定身份商品的奖项跳出
-                    continue;
-                }
-                if (isset($nowLevelOrdinary[$key]) == false) {
-                    $nowLevelOrdinary[$key] = 0;
-                }
-                $nowLevelOrdinary[$key] += 1;
-                //判断身份是否满足条件
-                $limit_role = explode(',', $award['limit_role']);
-                if (in_array($buyUserInfo['role_id'], $limit_role) == false) {
-                    continue;
-                }
-                //判断购买身份商品
-                if ($award['role_goods'] != $orderInfo['rg_id']) {
-                    continue;
-                }
-
-                if ($parentId > 0) {
-                    $awardValue = json_decode($award['award_value'], true);//奖项内容
-                    foreach ($awardValue as $value) {
-                        $userInfo = $this->UsersModel->info($parentId);//获取会员信息
-                        $parentId = $userInfo['pid'];//优先记录下次循环用户ID
-                        $role_id = $userInfo['role_id'] * 1;
-                        $num = $value['num'][$role_id];
-                        if ($num <= 0) {
-                            continue;
-                        }
-                        $num_type = $value['num_type'][$role_id];
-                        if ($num_type == 'money') {//固定金额
-                            $inArr['dividend_amount'] = $num;
-                        } else {//订单百分比，扣除运费后计算
-                            $amount = $orderInfo['order_amount'] - $orderInfo['shipping_fee'];
-                            $inArr['dividend_amount'] = $amount / 100 * $num;
-                            if ($inArr['dividend_amount'] <= 0) {//佣金小于等于0，跳过
-                                continue;
-                            }
-                        }
-                        $inArr['status'] = $status;
-                        $inArr['order_type'] = $orderInfo['d_type'];
-                        $inArr['order_id'] = $orderInfo['order_id'];
-                        $inArr['order_sn'] = $orderInfo['order_sn'];
-                        $inArr['buy_uid'] = $orderInfo['user_id'];
-                        $inArr['order_amount'] = $orderInfo['order_amount'];
-                        $inArr['dividend_uid'] = $userInfo['user_id'];
-                        $inArr['role_id'] = $role_id;
-                        $inArr['role_name'] = $userInfo['role']['role_name'];
-                        $inArr['level'] = $value['level'];
-                        $inArr['award_id'] = $award['award_id'];
-                        $inArr['award_name'] = $award['award_name'];
-                        $inArr['level_award_name'] = $value['name'];
-
-                        $returnArr['dividend_amount'] += $inArr['dividend_amount'];
-                        $inArr['add_time'] = $inArr['update_time'] = time();
-                        $res = $this->Model->create($inArr);
-                        if ($res->log_id < 1) return false;
-                        if ($parentId < 1) break;//没有找到上级终止
-                    }
-                }
-            }
-            return $returnArr;
-        }//end
 
         //获取旧的分佣记录的分佣者的身份
         $userDividendRole = [];
@@ -218,9 +161,9 @@ class Dividend extends BaseModel
         //end
 
         $parentId = $buyUserInfo['pid'];//获取购买会员直属上级ID
-        //普通订单奖项处理
+        // //普通订单奖项处理
         $roleList = (new DividendRoleModel)->getRows();
-        $lastRole = $roleList[$orderInfo['dividend_role_id']]['level'];//下单会员下单时身份级别
+        $lastRole = $roleList[$orderInfo['dividend_role_id']]['role_id'];//下单会员下单时身份级别
 
         if ($parentId < 1) return $returnArr;//没有上级不执行
 
@@ -228,28 +171,56 @@ class Dividend extends BaseModel
         $dividend_goods_ids = [];//所有分佣商品id
         $dividend_goods = [];//所有分佣商品
         $dividend_goods_total = 0;//所有分佣商品金额
+        $goods_total = 0;// 分佣商品总数
+        $GoodsModel = new GoodsModel();
         foreach ($goodsList as $goods) {
-            if ($goods['is_dividend'] == 1){
+            $_goods = $GoodsModel->info($goods['goods_id']);
+            if ($_goods['is_dividend'] == 1 && $_goods['goods_type'] == 2){
                 $dividend_goods_ids[] = $goods['goods_id'];
-                $diy_discount = 0;
-                if($orderInfo['diy_discount'] > 0){//后台改价优惠
-                    $total_price = $goods['sale_price'] * $goods['goods_number'];
-                    $diy_discount = priceFormat($total_price / $orderInfo['goods_amount'] * $orderInfo['diy_discount']);
-                }
-                if ($goods['return_goods_number'] > 0){//有退货处理
-                    $usd_bonus_pre = 0;
-                    if ($goods['usd_bonus_price'] > 0){//有使用优惠券
-                        $usd_bonus_pre = $goods['usd_bonus_price'] / $goods['goods_number'];
-                    }
-                    $goods['goods_number'] = $goods['goods_number'] - $goods['return_goods_number'];//购买数量减去已退货数量
-                    $goods['usd_bonus_price'] = $goods['goods_number'] * $usd_bonus_pre;
-                }
-                $goods['goods_total'] = priceFormat($goods['sale_price'] * $goods['goods_number'] - $goods['usd_bonus_price'] - $diy_discount);//商品总价小计
+                $goods['goods_total'] = priceFormat($goods['sale_price'] * $goods['goods_number']);//商品总价小计
                 $dividend_goods_total += $goods['goods_total'];
+                $goods_total += $goods['goods_number'];
+                $rank_award = json_decode($_goods['rank_award'],true);
+                $goods['award'] = json_decode($_goods['award'],true);
+                $level_award = json_decode($_goods['level_award'],true);
                 $dividend_goods[$goods['goods_id']] = $goods;
             }
         }//参与分佣商品处理end
+        // 直推奖处理
+        if ($rank_award['push_num'] > 0) {
+            $parentInfo = $this->UsersModel->info($parentId);
+            if (empty($parentInfo) == false) {
+                $dividend_amount = bcmul($goods_total,$rank_award['push_num'],2);
+                if ($dividend_amount > 0) {
+                    $returnArr['dividend_amount'] += $dividend_amount;
+                    $res = $this->createLog($orderInfo,$parentInfo,$dividend_amount,'推广奖金','直推一单获得'.$dividend_amount.'元推广奖金',$dividend_goods_total,$status);
+                    if (true !== $res) {
+                        // return false;
+                    }
+                }
+            }
+            
+        }
+        // 联创分红奖
+        if (empty($level_award) == false) {
+            $levelUser = $this->UsersModel->where('level_id','>',0)->select()->toArray();
+            if (empty($levelUser) == false) {
+                foreach ($levelUser as $user) {
+                    if ($level_award[$user['level_id']]['num'] > 0) {
+                        $dividend_amount = bcmul($goods_total,$level_award[$user['level_id']]['num'],2);
+                        if ($dividend_amount > 0) {
+                            $returnArr['dividend_amount'] += $dividend_amount;
+                            $res = $this->createLog($orderInfo,$user,$dividend_amount,'联创分红奖','订单产生获得'.$dividend_amount.'元联创分红奖',$dividend_goods_total,$status);
+                            if (true !== $res) {
+                                // return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
+        // 级差or平级
         do {
             $nowLevel += 1;
             $userInfo = $this->UsersModel->info($parentId);//获取会员信息
@@ -258,125 +229,44 @@ class Dividend extends BaseModel
                 $userInfo['role'] = $roleList[$userInfo['role_id']];
             }
             $parentId = $userInfo['pid'];//优先记录下次循环用户ID
-            foreach ($awardList as $key => $award) {
-                $amount = 0;//用于计算佣金的金额
-                if ($award['goods_limit'] == 3) {//身份分销的跳过
-                    continue;
-                }
-                if (isset($nowLevelOrdinary[$key]) == false) {
-                    $nowLevelOrdinary[$key] = 0;
-                }
-                $nowLevelOrdinary[$key] += 1;
-                $awardValue = json_decode($award['award_value'], true);    //奖项内容
-                if ($award['goods_limit'] == 1) {//购买任意分销商品
-                    $amount = $dividend_goods_total;
-                }elseif ($award['goods_limit'] == 2) {//购买指定分销商品
-                    $award_limit_buy_goods = explode(',', $award['buy_goods_id']);
-                    $isOk = false;
-                    foreach ($award_limit_buy_goods as $goods_id) {
-                        if (in_array($goods_id, $dividend_goods_ids) == true) {//限制商品存在购买中，成功跳出
-                            $isOk = true;
-                        }
-                        $amount += $dividend_goods[$goods_id]['goods_total'];
-                    }
-                    if ($isOk == false) {//不满足购买限制，跳出
-                        continue;
-                    }
-                }
-                if ($amount <= 0){
-                    continue;
-                }
-
-                //判断身份是否满足条件
-                $limit_role = explode(',', $award['limit_role']);
-                if (in_array($userInfo['role_id'], $limit_role) == false) {
-                    if ($award['award_type'] == 1 && $award['ordinary_type'] == 1) {//普通分销奖，无限级计算时执行
-                        $nowLevelOrdinary[$key] -= 1;
-                    }
-                    continue;
-                }
-
-                if ($award['award_type'] == 2) {//判断管理奖是否享受
-                    if ($userInfo['role']['level'] <= $lastRole) {//上级身份低于下级身份或平级时跳出
-                        continue;
-                    }
-                    if (empty($awardValue[$userInfo['role_id']])) {//没有找到相应奖项级别跳出
-                        continue;
-                    }
-                    if (isset($assignAwardNum[$award['award_id']]) == false) {//未定义附值为0
-                        $assignAwardNum[$award['award_id']] = 0;
-                    }
-                    $endAward = end($awardValue);//获取最后奖项
-                    if ($assignAwardNum[$award['award_id']] >= $endAward['num']) {
-                        unset($awardList[$key]);//管理奖已达最大分配值，终止，跳出
-                        continue;
-                    }
-                    $awardVal = $awardValue[$userInfo['role_id']];//获取对应角色奖项
-                    $lastRole = $userInfo['role']['level'];
-                    $award_num = $awardVal['num'] - $assignAwardNum[$award['award_id']];//计算当前可分值
-                    if ($award_num <= 0) {//已分完终止
-                        unset($awardList[$key]);//移除已结束的奖项
-                        continue;
-                    }
-                } else {
-                    if ($award['award_type'] == 1 && $award['ordinary_type'] == 1) {//普通分销，无限级计算时，会员判断级别方式不一样
-                        if (empty($awardValue[$nowLevelOrdinary[$key]])) {//没有找到相应奖项级别跳出，并移除奖项
-                            unset($awardList[$key]);//移除奖项
-                            continue;
-                        }
-                        $awardVal = $awardValue[$nowLevelOrdinary[$key]];
-                    } else {
-                        if (empty($awardValue[$nowLevel])) {//没有找到相应奖项级别跳出，并移除奖项
-                            unset($awardList[$key]);//移除奖项
-                            continue;
-                        }
-                        $awardVal = $awardValue[$nowLevel];
-                    }
-                }
-
-                //执行奖项处理
-                $inArr = [];
-                if ($award['award_type'] == 1) {//普通分销奖
-                    if ($awardVal['num_type'] == 'money') {//固定金额
-                        $inArr['dividend_amount'] = $awardVal['num'];
-                    } else {//订单百分比，扣除运费和退款后计算
-                        $inArr['dividend_amount'] = priceFormat($amount / 100 * $awardVal['num']);
-                    }
-                } elseif ($award['award_type'] == 2) {//管理奖
-                    $assignAwardUser[] = $userInfo['user_id'];
-                    $assignAwardNum[$award['award_id']] += $award_num;
-                    if ($awardVal['num_type'] == 'money') {//固定金额
-                        $inArr['dividend_amount'] = $award_num;
-                    } else {//订单百分比，扣除运费和退款后计算
-                        $inArr['dividend_amount'] = priceFormat($amount / 100 * $awardVal['num']);
-                    }
-                }
-                if ($inArr['dividend_amount'] > 0) {//佣金大于0执行
-                    $returnArr['dividend_amount'] += $inArr['dividend_amount'];//计算总佣金
-                    $inArr['order_type'] = $orderInfo['d_type'];
-                    $inArr['status'] = $status;
-                    $inArr['order_id'] = $orderInfo['order_id'];
-                    $inArr['order_sn'] = $orderInfo['order_sn'];
-                    $inArr['buy_uid'] = $orderInfo['user_id'];
-                    $inArr['order_amount'] = $amount;
-                    $inArr['dividend_uid'] = $userInfo['user_id'];
-                    $inArr['role_id'] = $userInfo['role_id'];
-                    $inArr['role_name'] = $userInfo['role']['role_name'];
-                    $inArr['level'] = $nowLevel;
-                    $inArr['award_id'] = $award['award_id'];
-                    $inArr['award_name'] = $award['award_name'];
-                    $inArr['level_award_name'] = $awardVal['name'];
-                    $inArr['add_time'] = $inArr['update_time'] = time();
-                    $res = $this->Model->create($inArr);
-                    if ($res->log_id < 1) return false;
-                }
-            }
-
-            if (empty($awardList) == true) {//没有奖项可分了，终止
-                $parentId = 0;
-            }
+       
         } while ($parentId > 0);
         return $returnArr;
+    }
+    /**
+     * [createLog 保存分佣记录]
+     * @param  array   $orderInfo        [订单信息]
+     * @param  array   $userInfo         [用户信息]
+     * @param  float   $amount           [奖励金额]
+     * @param  string  $award_name       [奖励名称]
+     * @param  string  $level_award_name [奖励详情]
+     * @param  float   $amount           [分佣金额]
+     * @param  integer $status           [处理状态]
+     * @param  integer $nowLevel         [当前处理级别]
+     * @return boolean                   [处理结果]
+     */
+    public function createLog($orderInfo = [] , $userInfo  = [] , $dividend_amount = 0.00 , $award_name = '' , $level_award_name  = '' , $amount = 0.00 , $status = 0 , $nowLevel = 0 )
+    {
+        $inArr = [];
+        $inArr['dividend_amount'] = $dividend_amount;//计算总佣金
+        $inArr['order_type'] = $orderInfo['d_type'];
+        $inArr['status'] = $status;
+        $inArr['order_id'] = $orderInfo['order_id'];
+        $inArr['order_sn'] = $orderInfo['order_sn'];
+        $inArr['buy_uid'] = $orderInfo['user_id'];
+        $inArr['order_amount'] = $amount;
+        $inArr['dividend_uid'] = $userInfo['user_id'];
+        $inArr['role_id'] = $userInfo['role_id'];
+        $inArr['role_name'] = $userInfo['role']['role_name'];
+        $inArr['level'] = $nowLevel;
+        $inArr['award_id'] = 0;
+        $inArr['award_name'] = $award_name;
+        $inArr['level_award_name'] = $level_award_name;
+        $inArr['add_time'] = $inArr['update_time'] = time();
+        // print_r($inArr);
+        $res = $this->Model->create($inArr);
+        if ($res->log_id < 1) return false;
+        return true;
     }
     /*------------------------------------------------------ */
     //-- 执行升级方案

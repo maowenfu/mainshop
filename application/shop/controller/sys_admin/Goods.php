@@ -627,6 +627,21 @@ class Goods extends AdminController
                 }
             }
         }
+
+        if ($row['is_repeat'] == 1) {
+            $gswhere = [];
+            $gswhere[] = ['goods_id','<>',$row['goods_id']];
+            $gswhere[] = ['is_repeat','=',1];
+            $count = $this->Model->where($gswhere)->count();
+            if ($count > 0) {
+                $res = $this->Model->where($gswhere)->update(['update_time'=>time(),'is_repeat'=>0]);
+                if ($res < 1) {
+                    Db::rollback();// 回滚事务
+                    return $this->error('操作失败:系统错误-1.');
+                }
+            }
+        }
+
         Db::commit();// 提交事务
         $this->Model->cleanMemcache($row['goods_id']);
         $goods_status = config('config.goods_status');
@@ -852,6 +867,19 @@ class Goods extends AdminController
                 }
             }
         }
+        if ($row['is_repeat'] == 1) {
+            $gswhere = [];
+            $gswhere[] = ['goods_id','<>',$row['goods_id']];
+            $gswhere[] = ['is_repeat','=',1];
+            $count = $this->Model->where($gswhere)->count();
+            if ($count > 0) {
+                $res = $this->Model->where($gswhere)->update(['update_time'=>time(),'is_repeat'=>0]);
+                if ($res < 1) {
+                    Db::rollback();// 回滚事务
+                    return $this->error('操作失败:系统错误-1.');
+                }
+            }
+        }
         Db::commit();// 提交事务
         $goods_status = config('config.goods_status');
         $info = $this->Model->info($row['goods_id']);
@@ -1044,4 +1072,29 @@ class Goods extends AdminController
         return true;
     }
 
+    /*------------------------------------------------------ */
+    //-- 查询商品是否多规格商品
+    /*------------------------------------------------------ */
+    public function goods_sku() {
+        $goods_id =  input('goods_id','','trim');
+        if (!empty($goods_id)){
+             $where[] = ['goods_id','=',$goods_id];
+        }
+        $goods_name = $_list = $this->Model->where($where)->value('goods_name');//商品名称
+        $_list = Db::name('shop_goods_sku')->where($where)->field("sku_id,goods_id,goods_sn,sku,sku_val,sku_name")->select();
+        if ($_list) {
+            foreach ($_list as $key=>$row){
+                $row['sku_name'] = $row['goods_sn'].':'.$goods_name.'('.$row['sku_name'].')';
+                $_list[$key] = $row;
+            }
+        }
+        if ($_list) {
+            $result['code'] = 1;
+            $result['msg'] = '多规格商品。请选择规格添加';
+        }else{
+            $result['code'] = 0;
+        }
+        $result['list'] = $_list;
+        return $this->ajaxReturn($result);
+    }
 }

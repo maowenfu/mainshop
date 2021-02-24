@@ -299,6 +299,30 @@ class Users extends AdminController
 
         return $this->fetch('sys_admin/users/edit_role');
     }
+
+    /*------------------------------------------------------ */
+    //-- 修改分销身份
+    /*------------------------------------------------------ */
+    public function editLevel()
+    {
+        $user_id = input('user_id', 0, 'intval');
+        $row = $this->Model->info($user_id);
+        $UsersLevelModel = new UsersLevelModel();
+        $levelList = $UsersLevelModel->getRows();
+        if ($this->request->isPost()) {
+            $data['level_id'] = input('level_id', 0, 'intval');
+            $this->checkUpData($row, $data);
+            $res = $this->Model->upInfo($user_id, $data);
+            if ($res < 1) return $this->error('操作失败,请重试.');
+            $info = '后台手工操作调整等级由【' . ($row['level_id'] == 0 ? '无' : $levelList[$row['level_id']]['level_name']) . '】调整为【' .($data['level_id'] < 1 ? '无' : $levelList[$data['level_id']]['level_name']) . '】';
+            $this->_log($user_id, $info, 'member');
+            return $this->success('修改等级成功！', 'reload');
+        }
+        $this->assign("levelList", $levelList);
+        $this->assign("row", $row);
+
+        return $this->fetch('sys_admin/users/edit_level');
+    }
     /*------------------------------------------------------ */
     //-- 封禁会员
     /*------------------------------------------------------ */

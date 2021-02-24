@@ -841,6 +841,14 @@ class OrderModel extends BaseModel
             return false;
         }
         $orderInfo = $this->find($upData['order_id'])->toArray();
+        if ($orderInfo['order_type'] == 4) {
+            $ShopRankModel = new \app\shop\model\ShopRankModel();
+            $res = $ShopRankModel->setRankOrder($orderInfo);
+            if ($res !== true) {
+                return false;
+            }
+        }
+
         $this->_log($orderInfo,$_log);
         asynRun('shop/OrderModel/asynRunPaySuccessEval',['order_id'=>$upData['order_id']]);//异步执行
         return true;

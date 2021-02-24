@@ -303,28 +303,24 @@ function userInfo($user_id,$return=true,$field=''){
 /*------------------------------------------------------ */
 //-- 获取会员等级
 /*------------------------------------------------------ */ 
-function userLevel($integral,$returnName=true){
-	static $userLevelList;	
-	if (!isset($userLevelList)){
-		 $Model = model('app\member\model\UsersLevelModel');	
-		 $userLevelList = $Model->getRows();
-	}
-	$level = array();
-	if (empty($userLevelList)){
-        if ($returnName == true) return '未设置';
-	    return $level;
+function userLevel($level_id,$returnName=true){
+    static $userLevelList;  
+    if (!isset($userLevelList)){
+        $Model = model('app\member\model\UsersLevelModel'); 
+        $userLevelList = $Model->getRows();
     }
-	foreach ($userLevelList as $row){
-		if ($integral >= $row['min'] && $integral <= $row['max']){
-			$level = $row;		
-			break;
-		}elseif ($row['max'] == 0){
-			$level = $row;
-			break;
-		}
-	}
-	if ($returnName == true) return $level['level_name'];
-	return $level;
+    $level = array();
+    if (empty($userLevelList)){
+        if ($returnName == true) return '';
+        return $level;
+    }
+    foreach ($userLevelList as $row){
+        if ($row['level_id'] == $level_id) {
+            $level = $row;
+        }
+    }
+    if ($returnName == true) return $level['level_name'] ?  $level['level_name'] : '无';
+    return $level;
 }
 /*------------------------------------------------------ */
 //-- 格式化价格

@@ -28,6 +28,13 @@ class Pay extends ApiController{
                     unset($payList[$key]);
                 }
             }
+        }else{
+            foreach ($payList as $key=>$pay){
+                if ($pay['status'] == 0) {
+                    unset($payList[$key]);
+                }
+            }
+            
         }
         $return['data'] = $payList;
         $return['balance_money'] = $this->userInfo['account']['balance_money'];

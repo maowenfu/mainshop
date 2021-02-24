@@ -1,0 +1,29 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="{:url('editLevel')}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">修改级别</h4>
+            </div>
+            <div class="modal-body">
+                 <div class="form-group">
+                        <label class="col-sm-2 control-label">级别</label>
+                        <div class="col-sm-6 must">
+                            <select class="input-xlarge" name="level_id" data-rule-required="true">
+                              <option value="0" {$row['level_id']==0?'selected':''} >无</option>
+                              {volist name="levelList" id="arr" }
+                                <option value="{$arr.level_id}" {$arr['level_id']==$row['level_id']?'selected':''} >{$arr.level_name}</option>
+                              {/volist}
+                            </select>
+                        </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="{$row.user_id}" name="user_id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

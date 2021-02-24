@@ -47,7 +47,11 @@
                 <label class="control-label">真实姓名：</label>
                 <div class="col-sm-3"><label>{$row.real_name|default='未填写'}</label></div>
                 <label class="control-label">用户级别：</label>
-                <div class="col-sm-3 m-t-mc">{$row.account.total_integral|userLevel}</div>
+                <div class="col-sm-3 m-t-mc">{$row.level_id|userLevel}
+                    <a href="javascript:;" title="修改分销身份" data-remote="{:url('sys_admin.users/editLevel',array('user_id'=>$row['user_id']))}" data-toggle="ajaxModal" class="btn btn-sm btn-default m-l" >
+                        <i class="fa fa-edit"></i>修改级别
+                    </a>
+                </div>
             </div>
 
             <div class="form-group">
