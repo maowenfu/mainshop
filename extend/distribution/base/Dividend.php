@@ -66,12 +66,14 @@ class Dividend extends BaseModel
                 $upData = $this->saveLog($orderInfo, $goodsList, $status);//佣金计算
                 // $ShopRankModel = new \app\shop\model\ShopRankModel();
                 // $res = $ShopRankModel->setRankOrder($orderInfo);
-                // // if ($res !== true) {
-                // //     return false;
-                // // }
+                // // // if ($res !== true) {
+                // // //     return false;
+                // // // }
             
                 
             }
+            // var_dump(112233);
+            // die;
             if (is_array($upData) == false) return false;
             if ($status == $OrderModel->config['DD_PAYED']) {
                 $res = $this->evalLevelUp($orderInfo);//升级处理
@@ -89,7 +91,7 @@ class Dividend extends BaseModel
             $upData['status'] = $OrderModel->config['DD_PAYED'];
             $send_msg = true;
         } elseif ($type == 'cancel') {//订单取消
-            $upData['status'] = $OrderModel->config['DD_CANCELED'];
+            // $upData['status'] = $OrderModel->config['DD_CANCELED'];
             $order_operating = '订单取消';
             $send_msg = true;
         } elseif ($type == 'unpayed') {//未付款
@@ -101,11 +103,11 @@ class Dividend extends BaseModel
                 $upData['status'] = $OrderModel->config['DD_UNCONFIRMED'];
             }
         } elseif ($type == 'shipping') {//发货
-            $upData['status'] = $OrderModel->config['DD_SHIPPED'];
+            // $upData['status'] = $OrderModel->config['DD_SHIPPED'];
         } elseif ($type == 'unshipping') {//未发货
             $upData['status'] = $OrderModel->config['DD_PAYED'];
         } elseif ($type == 'sign') {//签收
-            $upData['status'] = $OrderModel->config['DD_SIGN'];
+            // $upData['status'] = $OrderModel->config['DD_SIGN'];
         } elseif ($type == 'unsign') {//撤销签收
             return $this->Model->returnArrival($orderInfo['order_id'], 'unsign', $orderInfo['user_id']);
         } elseif ($type == 'returned') {//退货
@@ -128,11 +130,11 @@ class Dividend extends BaseModel
             $this->Model->sendMsg($type, $orderInfo['order_id'], $order_operating);//发送模板消息
         }
 
-        if ($type == 'sign') {//签收,执行佣金到帐
+        if ($type == 'pay') {//签收,执行佣金到帐
             $shop_after_sale_limit = settings('shop_after_sale_limit');
-            if ($shop_after_sale_limit == 0) {
+            // if ($shop_after_sale_limit == 0) {
                 return $this->Model->evalArrival($orderInfo['order_id'], 'order');
-            }
+            // }
         }
         return true;
     }
@@ -144,10 +146,6 @@ class Dividend extends BaseModel
         $returnArr['dividend_amount'] = 0;
 
         $nowLevel = 0;//当前处理级别
-        // $nowLevelOrdinary = [];//普通分销当前处理级别，普通分销有逐级计算和无限级计算，如果无限级，不满条件将一直最后的上级
-        $assignAwardNum = [];//记录已分出去的管理奖金额
-        $assignAwardUser = [];//记录已领管理奖的用户
-
         $buyUserInfo = $this->UsersModel->info($orderInfo['user_id']);//获取购买会员信息
 
         //获取旧的分佣记录的分佣者的身份
@@ -163,7 +161,7 @@ class Dividend extends BaseModel
         $parentId = $buyUserInfo['pid'];//获取购买会员直属上级ID
         // //普通订单奖项处理
         $roleList = (new DividendRoleModel)->getRows();
-        $lastRole = $roleList[$orderInfo['dividend_role_id']]['role_id'];//下单会员下单时身份级别
+        $diffRole = $lastRole = $roleList[$orderInfo['dividend_role_id']]['role_id'];//下单会员下单时身份级别
 
         if ($parentId < 1) return $returnArr;//没有上级不执行
 
@@ -172,6 +170,7 @@ class Dividend extends BaseModel
         $dividend_goods = [];//所有分佣商品
         $dividend_goods_total = 0;//所有分佣商品金额
         $goods_total = 0;// 分佣商品总数
+        $assignAwardNum = [];//记录已分出去的管理奖金额
         $GoodsModel = new GoodsModel();
         foreach ($goodsList as $goods) {
             $_goods = $GoodsModel->info($goods['goods_id']);
@@ -184,6 +183,9 @@ class Dividend extends BaseModel
                 $goods['award'] = json_decode($_goods['award'],true);
                 $level_award = json_decode($_goods['level_award'],true);
                 $dividend_goods[$goods['goods_id']] = $goods;
+                $assignAwardNum['goods'][$goods['goods_id']]['num'] = 0;
+                $assignAwardNum['pid'] = $buyUserInfo['pid'];
+                $assignAwardNum['goods'][$goods['goods_id']]['same_num'] = 0;
             }
         }//参与分佣商品处理end
         // 直推奖处理
@@ -193,7 +195,8 @@ class Dividend extends BaseModel
                 $dividend_amount = bcmul($goods_total,$rank_award['push_num'],2);
                 if ($dividend_amount > 0) {
                     $returnArr['dividend_amount'] += $dividend_amount;
-                    $res = $this->createLog($orderInfo,$parentInfo,$dividend_amount,'推广奖金','直推一单获得'.$dividend_amount.'元推广奖金',$dividend_goods_total,$status);
+                    $level_award_name = '直推用户【'.$buyUserInfo['user_id'].' - '.userInfo($buyUserInfo['user_id']).'】产生订单，获得'.$dividend_amount.'元推广奖金.';
+                    $res = $this->createLog($orderInfo,$parentInfo,$dividend_amount,$level_award_name,$dividend_goods_total,$status);
                     if (true !== $res) {
                         // return false;
                     }
@@ -203,14 +206,18 @@ class Dividend extends BaseModel
         }
         // 联创分红奖
         if (empty($level_award) == false) {
-            $levelUser = $this->UsersModel->where('level_id','>',0)->select()->toArray();
+            $levelUser = $this->UsersModel->where('level_id','>',0)->field('user_id')->select()->toArray();
             if (empty($levelUser) == false) {
-                foreach ($levelUser as $user) {
+                foreach ($levelUser as $u) {
+                    $user = $this->UsersModel->info($u['user_id']);
                     if ($level_award[$user['level_id']]['num'] > 0) {
                         $dividend_amount = bcmul($goods_total,$level_award[$user['level_id']]['num'],2);
                         if ($dividend_amount > 0) {
                             $returnArr['dividend_amount'] += $dividend_amount;
-                            $res = $this->createLog($orderInfo,$user,$dividend_amount,'联创分红奖','订单产生获得'.$dividend_amount.'元联创分红奖',$dividend_goods_total,$status);
+
+                            $level_award_name = '用户【'.$buyUserInfo['user_id'].' - '.userInfo($buyUserInfo['user_id']).'】产生订单，获得'.$dividend_amount.'联创分红奖.';
+
+                            $res = $this->createLog($orderInfo,$user,$dividend_amount,'联创分红奖',$level_award_name,$dividend_goods_total,$status);
                             if (true !== $res) {
                                 // return false;
                             }
@@ -219,7 +226,7 @@ class Dividend extends BaseModel
                 }
             }
         }
-
+        
         // 级差or平级
         do {
             $nowLevel += 1;
@@ -229,7 +236,36 @@ class Dividend extends BaseModel
                 $userInfo['role'] = $roleList[$userInfo['role_id']];
             }
             $parentId = $userInfo['pid'];//优先记录下次循环用户ID
-       
+            if ($diffRole > $userInfo['role_id']) continue;
+            if ( $buyUserInfo['pid'] == $userInfo['user_id'] && $diffRole >= $userInfo['role_id']) continue;
+            $dividend_amount = 0;
+            if ($diffRole < $userInfo['role_id']) {
+                foreach ($dividend_goods as $goods) {
+                    $award = $goods['award'];
+                    if (empty($award)) continue;
+                    if (empty($award[$userInfo['role_id']])) continue;
+                    $val = $award[$userInfo['role_id']];
+                    $diffNum = $assignAwardNum['goods'][$goods['goods_id']]['num'];
+                    $dividend_amount += $val['num'] - $diffNum;
+                    $assignAwardNum['goods'][$goods['goods_id']]['num'] = $val['num'];
+                    $assignAwardNum['goods'][$goods['goods_id']]['same_num'] = $val['num'];
+                }
+                $award_name = '级差奖励';
+                $level_award_name = '您的下级用户【'.$buyUserInfo['user_id'].' - '.userInfo($buyUserInfo['user_id']).'】产生订单，获得'.$dividend_amount.'元级差奖励.';
+                $assignAwardNum['pid'] = $userInfo['pid'];
+            }else{
+                if ($assignAwardNum['pid'] != $userInfo['user_id']) continue;
+                foreach ($assignAwardNum['goods'] as $goods) {
+                    $dividend_amount += bcdiv($goods['num'] * $goods['same_num'] , 100 , 2);
+                }
+                $award_name = '平级奖励';
+                $level_award_name = '您的下级用户【'.$buyUserInfo['user_id'].' - '.userInfo($buyUserInfo['user_id']).'】产生订单，获得'.$dividend_amount.'元平级奖励.';
+            }
+            if ($dividend_amount > 0) {
+                $res = $this->createLog($orderInfo,$userInfo,$dividend_amount,$award_name,$level_award_name,$dividend_goods_total,$status);
+            }
+            
+            $diffRole = $userInfo['role_id'];
         } while ($parentId > 0);
         return $returnArr;
     }
@@ -263,7 +299,6 @@ class Dividend extends BaseModel
         $inArr['award_name'] = $award_name;
         $inArr['level_award_name'] = $level_award_name;
         $inArr['add_time'] = $inArr['update_time'] = time();
-        // print_r($inArr);
         $res = $this->Model->create($inArr);
         if ($res->log_id < 1) return false;
         return true;

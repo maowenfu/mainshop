@@ -414,6 +414,7 @@ class Flow extends ApiController
         $inArr['city'] = $address['city'];
         $inArr['district'] = $address['district'];
         $inArr['mobile'] = $address['mobile'];
+        $inArr['address_id'] = $address_id;
 
         $inArr['add_time'] = $time;
         $inArr['user_id'] = $this->userInfo['user_id'];
