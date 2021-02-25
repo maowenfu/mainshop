@@ -6,6 +6,7 @@
     <th width="100">用户名</th>
     <th width="120">推荐人</th>
     <th width="150">等级/身份</th> 
+    <th width="150">出局次数</th> 
     <th width="100">帐户余额</th> 
     <th width="130">最近登陆</th>    
     <th width="80">操作</th>
@@ -26,7 +27,7 @@
 {$roleList[$vo['role_id']]['role_name']}
 {/eq}
 </td>
-
+<td>{$vo.out_num}</td>
 <td>{$vo.balance_money}</td>
 <td>{$vo.login_time|dateTpl}</td>
     <td>

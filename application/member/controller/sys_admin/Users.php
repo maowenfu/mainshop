@@ -109,7 +109,7 @@ class Users extends AdminController
 
         if ($this->search['levelId'] > 0) {
             $level = $this->levelList[$this->search['levelId']];
-            $where[] = ' uc.total_integral between ' . $level['min'] . ' AND ' . $level['max'];
+            $where[] = ' u.level_id = ' . $this->search['levelId'] * 1;
         }
 
         if (empty($this->search['keyword']) == false) {

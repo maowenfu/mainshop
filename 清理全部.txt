@@ -68,4 +68,8 @@ TRUNCATE TABLE users_recharge_log;
 TRUNCATE TABLE users_sign;
 TRUNCATE TABLE users_withdraw_account;
 TRUNCATE TABLE users_withdraw_log;
+TRUNCATE TABLE users_account_log;
+TRUNCATE TABLE users_transfer_log;
+
+
 TRUNCATE TABLE weixin_users;

@@ -26,6 +26,8 @@ class Wallet  extends ClientbaseController{
     //-- 充值
     /*------------------------------------------------------ */
     public function recharge(){
+        $settings = settings();
+        $this->assign('settings', $settings);
         $this->assign('title', '充值');
         return $this->fetch('recharge');
     }

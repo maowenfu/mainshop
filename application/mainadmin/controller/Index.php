@@ -170,7 +170,7 @@ class Index extends AdminController
         foreach ($rows as $row){
             $info['all_add_num'] += 1;//全部订单
             if ($row['order_status'] == 1){
-                $info['order_pay_num'] += 1;//成交数
+                $info['order_pay_num'] += $row['order_amount'];//成交数
                 $info['order_amount'] += $row['order_amount'];//成交金额
                 $info['dividend_amount'] += $row['dividend_amount'];//分佣金额
                 if ($row['shipping_status'] > 0){

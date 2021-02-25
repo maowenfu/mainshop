@@ -1,6 +1,67 @@
 {extend name="layouts@base" /}
 {block name="head"}
 <link rel="stylesheet" href="__STATIC__/mobile/default/css/wallet.css" />
+<style>
+    .text{
+        padding: .2rem;
+    }
+    .account{
+        background-color: #fff;
+    }
+    .oblock{
+        margin: 0 .2rem .08rem;
+        border-radius: .066667rem;
+    }
+    .oblock .type{
+        display: flex;
+        align-items: center;
+        margin-bottom: .133333rem;
+    }
+    .oblock{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: .2rem 0;
+        background-color: #ff00000a;
+    }
+    .oblock .type img{
+        width: .266667rem;
+        height: .266667rem;
+        margin-right: .053333rem;
+    }
+    .weixinCode{
+        width: 1.466667rem;
+        height: 1.466667rem;
+    }
+    .oblock p{
+        margin: .1rem 0 .2rem;
+    }
+    .chongzhi .button {
+        width: 4.466667rem;
+        margin: 0.266667rem 0.2rem;
+        height: 0.533333rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .offlinepage{
+        position:absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        z-index: 999;
+    }
+
+</style>
 {/block}
 {block name="pageType"}chongzhi{/block}
 {block name="main" }
@@ -16,7 +77,25 @@
 
 
               </div>
+
               <div class="uploading">
+                <div class="account">
+                    <div class="text fs28">您需要转款至以下任一账户</div>
+                    <div class="oblock">
+                        <div class="type"><img src="__STATIC__/mobile/default/images/weixinPay.png" alt=""><span class="fs28">微信收款码</span></div>
+                        <img src="{$settings.weixin}" alt="" class="weixinCode">
+                    </div>
+                    <div class="oblock">
+                        <div class="type"><img src="__STATIC__/mobile/default/images/aliPay.png" alt=""><span class="fs28">支付宝收款码</span></div>
+                        <img src="{$settings.alipaycode}" alt="" class="weixinCode">
+                    </div>
+                    <div class="oblock">
+                        <div class="type"><img src="__STATIC__/mobile/default/images/offlinePay.png" alt=""><span class="fs28">银行账户</span></div>
+                        <p class="fs32 fw_b color_3">{$settings.bank_name}</p>
+                        <span class="fs28 color_3">{$settings.bank_card}</span>
+                        <div class="fs28 color_3"><span>{$settings.bank_address}</span></div>
+                    </div>
+                </div>
                   <div class="title fs28 fw_b color_3">上传凭证</div>
                   <div class="uploadBox">
 

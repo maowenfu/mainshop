@@ -15,7 +15,7 @@ class LinksModel extends BaseModel
 		$links =  [
             [
                 'name' => '首页',
-                'url' => config('config.host_path')
+                'url' => '/'
             ],[
                 'name' => '用户中心',
                 'url' => '/member/center/index'
@@ -53,53 +53,44 @@ class LinksModel extends BaseModel
                 'name' => '我的钱包',
                 'url' =>'/member/wallet/index'
             ],[
-                'name' => '积分商品',
-                'url' =>'/integral/goods/index'
-            ],[
-                'name' => '每日签到',
-                'url' =>'/member/user_sign/index'
-            ], [
-                'name' => '我的优惠券',
-                'url' =>'/shop/bonus/index'
-            ],[
-                'name' => '领劵中心',
-                'url' =>'/shop/bonus/bonuscenter'
+                'name' => '排位列表',
+                'url' =>'/shop/rank/index'
             ]
         ];
 		$setting = settings();
 
-        //判断直播是否存在
-        if ($setting['model_setting']['xcxlive'] == 1) {
-            $links[] = [
-                'name' => '直播列表',
-                'url' =>'/pages/live/roomList/index'
-            ];
-        }
-        //判断拼团模块是否存在
-        if ($setting['model_setting']['fightgroup'] == 1) {
-            $links[] = [
-                'name' => '拼团活动',
-                'url' =>'/fightgroup/index/index'
-            ];
-            $links[] = [
-                'name' => '我的拼团',
-                'url' =>'/fightgroup/order/index'
-            ];
-        }
-        //判断限时优惠模块是否存在
-        if ($setting['model_setting']['favour'] == 1) {
-            $links[] = [
-                'name' => '限时优惠',
-                'url' =>'/favour/index/index'
-            ];
-        }
-        //判断秒杀模块是否存在
-        if ($setting['model_setting']['second'] == 1) {
-            $links[] = [
-                'name' => '秒杀活动',
-                'url' =>'/second/index/index'
-            ];
-        }
+        // //判断直播是否存在
+        // if ($setting['model_setting']['xcxlive'] == 1) {
+        //     $links[] = [
+        //         'name' => '直播列表',
+        //         'url' =>'/pages/live/roomList/index'
+        //     ];
+        // }
+        // //判断拼团模块是否存在
+        // if ($setting['model_setting']['fightgroup'] == 1) {
+        //     $links[] = [
+        //         'name' => '拼团活动',
+        //         'url' =>'/fightgroup/index/index'
+        //     ];
+        //     $links[] = [
+        //         'name' => '我的拼团',
+        //         'url' =>'/fightgroup/order/index'
+        //     ];
+        // }
+        // //判断限时优惠模块是否存在
+        // if ($setting['model_setting']['favour'] == 1) {
+        //     $links[] = [
+        //         'name' => '限时优惠',
+        //         'url' =>'/favour/index/index'
+        //     ];
+        // }
+        // //判断秒杀模块是否存在
+        // if ($setting['model_setting']['second'] == 1) {
+        //     $links[] = [
+        //         'name' => '秒杀活动',
+        //         'url' =>'/second/index/index'
+        //     ];
+        // }
         return $links;
 	}
 }
