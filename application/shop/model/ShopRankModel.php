@@ -3,8 +3,8 @@
 /**
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
- * @Last Modified by:   1
- * @Last Modified time: 2021-02-24 23:02:18
+ * @Last Modified by:   maowenfu
+ * @Last Modified time: 2021-02-25 17:37:35
  */
 namespace app\shop\model;
 
@@ -20,6 +20,7 @@ use app\mainadmin\model\PaymentModel;
 class ShopRankModel extends BaseModel
 {
  	protected $table = 'shop_rank';
+    protected $pk = 'rank_id';
 
     /*------------------------------------------------------ */
     //-- 下单参与排位
@@ -40,6 +41,7 @@ class ShopRankModel extends BaseModel
     		$inArr['add_time'] = $time;
     		$res = $this::create($inArr);
     		if (empty($res)) {
+                $this->_log(0,'排位数据添加失败',$buyUserInfo['user_id']);
     			return false;
     		}
     		return true;
@@ -56,6 +58,7 @@ class ShopRankModel extends BaseModel
     		$inArr['add_time'] = $time;
     		$res = $this::create($inArr);
     		if (empty($res)) {
+                $this->_log(0,'排位数据添加失败',$buyUserInfo['user_id']);
     			return false;
     		}
     		unset($inArr);
@@ -72,6 +75,7 @@ class ShopRankModel extends BaseModel
     		$upData['update_time'] = $time;
     		$res = $this->where('rank_id',$topInfo['rank_id'])->update($upData);
     		if ($res < 1) {
+                $this->_log($topInfo['rank_id'],'更新失败-1');
     			return false;
     		}
     		unset($upData);
@@ -79,22 +83,33 @@ class ShopRankModel extends BaseModel
     		$userInfo = $UsersModel->info($topInfo['user_id']);
     		$res = $this->createLog($orderInfo,$userInfo,$dividend_amount,$dividend_bean,$time);
     		if (true !== $res) {
+                $this->_log(0,'佣金日志插入失败',$buyUserInfo['user_id']);
     			return false;
     		}
+            
     		// 出局处理
     		$info = $this->lock(true)->where('rank_id',$topInfo['rank_id'])->find();
+            (new OrderModel)->where('order_id',$orderInfo['order_id'])->update(['dividend_amount'=>['INC',$award_num]]);
     		if ($info['award_num'] == 2) {
                 $upData = [];
                 $upData['status'] = 2;
                 $upData['update_time'] = $upData['out_time'] = $time;
                 $res = $this->where('rank_id',$info['rank_id'])->update($upData);
                 if ($res < 1) {
+                    $this->_log($info['rank_id'],'状态修改失败');
                     return false;
                 }
                 $res = $this->where('pid',$info['rank_id'])->update(['update_time'=>$time,'status'=>1]);
     			if ($res < 1) {
+                    $this->_log($info['rank_id'],'状态修改失败 -1');
                     return false;
                 }
+
+                $UsersModel->where('user_id',$info['user_id'])->update(['out_num'=>['INC',1]]);
+
+
+                
+
                 $res = $this->repeatInvestment($info);
                 if (true != $res) {
                     return false;
@@ -399,12 +414,13 @@ class ShopRankModel extends BaseModel
         return $shippingFee;
     }
     // 失败日志
-    public function _log($rank_id,$info)
+    public function _log($rank_id,$info,$user_id = 0)
     {
         $inArr = [];
         $inArr['log_info'] = $info;
         $inArr['rank_id'] = $rank_id;
-        $inArr['time'] = time();
+        $inArr['rank_id'] = $user_id;
+        $inArr['add_time'] = time();
         (new RankErrorModel)::create($inArr);
     }
 
@@ -442,7 +458,7 @@ class ShopRankModel extends BaseModel
         $changedata['balance_money'] = $dividend_amount;
         $changedata['use_integral'] = $dividend_bean;
         $changedata['change_desc'] = '排位奖励到账';
-        $changedata['total_dividend'] = ($row['dividend_amount'] + $row['dividend_bean']);
+        $changedata['total_dividend'] = ($dividend_amount + $dividend_bean);
         $res = (new AccountLogModel)->change($changedata, $userInfo['user_id'], false);
         if ($res !== true) {
             return false;

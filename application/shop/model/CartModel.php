@@ -67,6 +67,10 @@ class CartModel extends BaseModel
             $goods['buy_brokerage'] = 0;
         } else {
             $goods = $GoodsModel->info($goods_id, false);
+
+            if ($type != 'onbuy') {
+                if ($goods['goods_type'] != 1) return '商品【'.$goods['goods_name'].'】，不能加入购物车';
+            }
             if (empty($goods)) return '商品不存在';
             if ($this->userInfo['user_id'] > 0) {
                 if ($goods['is_promote'] == 1 && $goods['limit_num'] > 0) {
@@ -86,6 +90,20 @@ class CartModel extends BaseModel
                 $use_integral = $goods['use_integral'];
             }
         }
+
+        // ShopRankModel
+
+        if ($goods['goods_type'] == 2) {
+            $count = (new ShopRankModel)->where([['user_id','=',$this->userInfo['user_id']],['status','in',[0,1]]])->count();
+            if ($count > 0) {
+                return '您正在排位中，不能重复参与.';
+            }
+
+            if ($num > 1) {
+                return '当前商品每次只能购买一件.';
+            }
+        }
+
         unset($where);
         /* 检查该商品是否已经存在在购物车中 */
         if ($this->userInfo['user_id'] > 0) {

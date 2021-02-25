@@ -41,12 +41,14 @@
                             {if $row['is_auto'] == 1}
                             <label>
                                 <input type="radio" name="is_auto" class="js_radio_undertake"
-                                          data-class="upleve_setting" value="1" {$row['is_auto']<=1?'checked':''}>
-                                {if $row.role_id == 1} 
-                                购买任意排位商品
-                                {else}        
+                                          data-class="upleve_setting" value="1" {$row['is_auto']<=1?'checked':''}>     
                                 满足条件升级
-                                {/if}
+                            </label>
+                            {elseif $row['is_auto'] == 2}
+                            <label>
+                                <input type="radio" name="is_auto" class="js_radio_undertake"
+                                          data-class="upleve_setting" value="2" {$row['is_auto']<=2?'checked':''}>
+                                购买任意排位商品
                             </label>
                             {else}
                             <label><input type="radio" name="is_auto" class="js_radio_undertake" value="9" {$row['is_auto']==9?'checked':''}>
@@ -95,14 +97,14 @@
                                 {if $row.role_id > 2}
                                 {volist name="allroleList" id="role"}
                                 {if $role.role_id == $row.role_id - 1}
-                                ，伞下{$role.role_name}人数：<input type="text" name="function_val[team_role][{$row.role_id}]" class="input-ssmall" data-rule-required="true" value="{$upleve_value['team_role'][$row.role_id]}" aria-required="true"> 人
+                                ，伞下{$role.role_name}人数：<input type="text" name="function_val[team_role][{$role.role_id}]" class="input-ssmall" data-rule-required="true" value="{$upleve_value['team_role'][$role.role_id]}" aria-required="true"> 人
                                 {/if}
                                 {/volist}
                                 {/if}
-                                {/if}
+                                
                             </div>                              
                         </div>
-                        
+                        {/if}
                         <!-- <div id="upleve_function_box" class="panel-default">
 
                         </div> -->

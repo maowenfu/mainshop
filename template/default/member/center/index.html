@@ -42,8 +42,8 @@
         <a href="{:url('shop/collect/index')}">
             <p class="num fs40 color_0 collect_num">0</p><span class="fs26 color_6">收藏</span>
         </a>
-        <a href="{:url('shop/bonus/index')}">
-            <p class="num fs40 color_0 bouns_num">0</p><span class="fs26 color_6">优惠券</span>
+        <a href="{:url('shop/rank/index')}">
+            <p class="num fs40 color_0 out_num">0</p><span class="fs26 color_6">出局次数</span>
         </a>
     </div>
     <div class="myOrder">
@@ -71,10 +71,10 @@
                 <img src="__STATIC__/mobile/default/images/myIcon06.png" alt="">
                 <p class="fs22 color_6">已完成</p>
             </a>
-            <a href="{:url('shop/after_sale/index')}" class="after_sale_num">
+            <!-- <a href="{:url('shop/after_sale/index')}" class="after_sale_num">
                 <img src="__STATIC__/mobile/default/images/myIcon07.png" alt="">
                 <p class="fs22 color_6">退换货</p>
-            </a>
+            </a> -->
         </div>
     </div>
     {notempty name="navMenuList"}
@@ -131,6 +131,7 @@
             $('.use_integral').html(res.userInfo.account.use_integral);
             $('.bouns_num').html(res.unusedNum);
             $('.collect_num').html(res.collectNum);
+            $('.out_num').html(res.out_num);
             $('#headimgurl').attr('src', res.userInfo.headimgurl ? res.userInfo.headimgurl : '__STATIC__/mobile/default/images/defheadimg.jpg');
 
 

@@ -41,3 +41,9 @@ TRUNCATE TABLE supplyer;
 TRUNCATE TABLE supplyer_log_login;
 TRUNCATE TABLE supplyer_log_sys;
 
+TRUNCATE TABLE shop_rank;
+TRUNCATE TABLE shop_rank_error_log;
+
+
+TRUNCATE TABLE users_account_log;
+TRUNCATE TABLE users_transfer_log;

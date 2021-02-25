@@ -51,7 +51,9 @@
             </div>
         </div>
         <div class="buttBox">
+            {if $goods.goods_type == 1}
             <span class="fs28 fw_b color_w BGcolor_3 buyBtn" data-goods_id="{$goods.goods_id}" data-type="oncart">加入购物车</span>
+            {/if}
             <span class="fs28 fw_b color_w BGcolor_r buyBtn" data-goods_id="{$goods.goods_id}" data-type="onbuy">立即购买</span>
         </div>
     </div>

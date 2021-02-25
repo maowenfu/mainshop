@@ -17,7 +17,7 @@
                 <header>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#basic" data-toggle="tab">基本设置</a></li>
-                        <li><a href="#withdraw" data-toggle="tab">提现设置</a></li>
+                        <li><a href="#withdraw" data-toggle="tab">提现/转账设置</a></li>
                         <li><a href="#register" data-toggle="tab">注册协议</a></li>
                     </ul>
                 </header>
@@ -34,13 +34,13 @@
                                     <input name="register_status" value="1" {$setting['register_status']==1?'checked':''}
                                     type="radio">开放注册
                                 </label>
-                                <label class="radio-inline">
+                                <!-- <label class="radio-inline">
                                     <input name="register_status" value="2" {$setting['register_status']==2?'checked':''}
                                     type="radio" >微信自动注册（使用微信自动注册，将关闭页面注册）
-                                </label>
+                                </label> -->
                             </div>
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group hide">
                             <label class="col-sm-2 control-label">注册赠送积分：</label>
                             <div class="controls">
                                 <input type="text" value="{$setting['register_integral']}" min=0 size="10"
@@ -86,7 +86,7 @@
                                 <span class="help-inline">注册填写邀请码【关闭】时此项不生效</span>
                             </div>
                         </div>
-                        <div class="form-group m-t">
+                        <div class="form-group m-t hide">
                             <label class="col-sm-2  control-label">绑定关系时间：</label>
                             <div class="controls">
                                 <label class="radio-inline">
@@ -99,7 +99,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group m-t">
+                        <div class="form-group m-t hide">
                             <label class="col-sm-2  control-label">分享绑定规则：</label>
                             <div class="controls">
                                 <label class="radio-inline">
@@ -113,8 +113,8 @@
                                 <span class="help-inline">此项只支持微信访问，非微信访问按当前分享来源绑定</span>
                             </div>
                         </div>
-                        <div class="line line-dashed line-lg pull-in" style="width:99%;"></div>
-                        <div class="form-group">
+                        <!-- <div class="line line-dashed line-lg pull-in" style="width:99%;"></div> -->
+                        <div class="form-group hide">
                             <label class="col-sm-2 control-label">是否开放签到：</label>
                             <div class="controls">
                                 <label class="radio-inline">
@@ -287,6 +287,41 @@
                                 <input type="text" value="{$setting['withdraw_num']|intval}" min=0 size="10"
                                        data-rule-required="true" data-rule-ismoney="true" name="withdraw_num">
                                 <span class="help-line"> （注：单人每日累计提现次数达到该值时，本日将不支持继续提现,为0时则不限）</span>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in" ></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">是否开启转账：</label>
+                            <div class="controls">
+                                <label class="radio-inline">
+                                    <input name="transfer_status" value="1" {$setting['transfer_status']==1?'checked':''}
+                                    type="radio">开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="transfer_status" value="0" {$setting['transfer_status']==0?'checked':''}
+                                    type="radio" >关闭
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">转账限制：</label>
+                            <div class="controls">
+                                <label class="radio-inline">
+                                    <input name="transfer_limit" value="1" {$setting['transfer_limit']==1?'checked':''}
+                                    type="radio">关系链上其它用户
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="transfer_limit" value="0" {$setting['transfer_limit']==0?'checked':''}
+                                    type="radio" >任何人
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="col-sm-2 control-label">最低转账金额：</label>
+                            <div class="controls">
+                                <input type="text" value="{$setting['min_transfer']}" min=0 size="10"
+                                       data-rule-required="true" data-rule-money="true" name="min_transfer">
+                                <span class="help-line"> （注：0不限制）</span>
                             </div>
                         </div>
                     </div>

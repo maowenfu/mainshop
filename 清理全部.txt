@@ -47,6 +47,9 @@ TRUNCATE TABLE shop_order_goods;
 TRUNCATE TABLE shop_order_info;
 TRUNCATE TABLE shop_order_log;
 TRUNCATE TABLE shop_shipping_log;
+TRUNCATE TABLE shop_rank;
+TRUNCATE TABLE shop_rank_error_log;
+
 TRUNCATE TABLE supplyer;
 TRUNCATE TABLE supplyer_log_login;
 TRUNCATE TABLE supplyer_log_sys;

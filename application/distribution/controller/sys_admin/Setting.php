@@ -38,6 +38,7 @@ class Setting extends AdminController
         $this->assign('Dividend', $Dividend);
         $this->assign('share_bg', explode(',',$settings['share_bg']));
         $this->assign('shop_after_sale_limit', $settings['shop_after_sale_limit']);
+        $this->assign('careful', json_decode($settings['careful'],true));
         $this->assign('setting', $settings);
         return $this->fetch();
     }
@@ -58,6 +59,8 @@ class Setting extends AdminController
         }
         $arr['share_bg'] = $share_bg;
 
+        $arr['careful'] = input('careful');
+        $arr['careful'] = json_encode($arr['careful'],true);
         $arr['DividendSatus'] = $Dividend['status'];
         $arr['DividendShareByRole'] = $Dividend['share_by_role'] * 1;
         unset($Dividend['setting'], $Dividend['status'], $Dividend['DividendShareByRole']);

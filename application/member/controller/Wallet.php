@@ -69,6 +69,22 @@ class Wallet  extends ClientbaseController{
         $this->assign('title', '排行榜');
         return $this->fetch('leaderboard');
     }
-
-
+    /*------------------------------------------------------ */
+    //-- 转账
+    /*------------------------------------------------------ */
+    public function transfer()
+    {
+        $this->assign('title', '转账');
+        $balance_money = $this->userInfo['account']['balance_money'];
+        $this->assign('balance_money', $balance_money);
+        return $this->fetch('transfer');
+    }
+    /*------------------------------------------------------ */
+    //-- 转账记录
+    /*------------------------------------------------------ */
+    public function transferLog()
+    {
+        $this->assign('title', '转账记录');
+        return $this->fetch('transfer_log');
+    }
 }?>

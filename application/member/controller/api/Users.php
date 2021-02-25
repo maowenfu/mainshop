@@ -64,6 +64,9 @@ class Users extends ApiController
         $pay_password = input('password','','trim');
         $old_password = input('old_password','','trim');
         $cfm_password = input('cfm_password','','trim');
+        if (strlen($pay_password) != 6) {
+            return $this->error('支付密码长度为6位.');
+        }
         if (empty($pay_password))  return $this->error('请输入新的支付密码.');
         $data['pay_password'] = f_hash($pay_password);
         if (empty($old_password) ){
@@ -72,8 +75,6 @@ class Users extends ApiController
                 if ($res !== true){
                     return $this->error($res);
                 }
-            }else{
-                return $this->error('旧密码不能为空值或者是0.');
             }
             
         }else{
@@ -131,8 +132,9 @@ class Users extends ApiController
         $unSeeMessageNum = $MessageModel->userMessageStats($this->userInfo['user_id']);//未读消息数量
         $return['unSeeNum'] = $unSeeMessageNum;
         $where[]=['user_id','=',$this->userInfo['user_id']];
-        $collectNum = (new \app\shop\model\GoodsCollectModel)->where($where)->cache(true,60)->count('collect_id');
+        $collectNum = (new \app\shop\model\GoodsCollectModel)->where($where)->count('collect_id');
         $return['collectNum'] = $collectNum;
+        $return['out_num'] = (new \app\shop\model\ShopRankModel)->where([['status','=',2],['user_id','=',$this->userInfo['user_id']]])->count();
 
         $return['code'] = 1;
         return $this->ajaxReturn($return);
@@ -235,6 +237,64 @@ class Users extends ApiController
         $arr = $flag == 'expend' ? [$field, '<', 0] : $arr;
         $where[] = $arr;
 
+        $where[] = ['change_time', 'between', array($_time, strtotime(date('Y-m-t', $_time)) + 86399)];
+        $rows = $AccountLogModel->where($where)->order('change_time DESC')->select();
+        $return['income'] = 0;
+        $return['expend'] = 0;
+        foreach ($rows as $key => $row) {
+            if ($row[$field] > 0) {
+                $return['income'] += $row[$field];
+                $row['value'] = '+' . $row[$field];
+            } else {
+                $return['expend'] += $row[$field] * -1;
+                $row['value'] = $row[$field];
+            }
+
+            $row['_time'] = timeTran($row['change_time']);
+            $return['list'][] = $row;
+        }
+        return $this->ajaxReturn($return);
+    }
+
+    /*------------------------------------------------------ */
+    //-- 获取会员转账记录
+    /*------------------------------------------------------ */
+    public function getTransferLog()
+    {
+        $type = input('type', 'balance', 'trim');
+        $time = input('time', '', 'trim');
+        $flag = input('flag','all','trim');
+        if (empty($time)) {
+            $time = date('Y年m月');
+        }
+        $return['time'] = $time;
+        $_time = strtotime(str_replace(array('年', '月'), array('-', ''), $time));
+        $return['code'] = 1;
+        $AccountLogModel = new AccountLogModel();
+        $where[] = ['user_id', '=', $this->userInfo['user_id']];
+        switch ($type) {
+            //余额
+            case 'balance':
+                $field = 'balance_money';
+                break;
+            //积分
+            case 'score':
+                $field = 'use_integral';
+                break;
+            //其他币种自己加
+            //默认查余额
+            default:
+                $field = 'balance_money';
+                break;
+        }
+
+        //收入 支出 全部 筛选
+        $arr = '';
+        $arr = $flag == 'all' ? [$field, '<>', 0] : $arr;
+        $arr = $flag == 'income' ? [$field, '>', 0] : $arr;
+        $arr = $flag == 'expend' ? [$field, '<', 0] : $arr;
+        $where[] = $arr;
+        $where[] = ['change_type', '=',8];
         $where[] = ['change_time', 'between', array($_time, strtotime(date('Y-m-t', $_time)) + 86399)];
         $rows = $AccountLogModel->where($where)->order('change_time DESC')->select();
         $return['income'] = 0;
@@ -820,5 +880,70 @@ class Users extends ApiController
         @unlink('.'.$id_card_positive);
         @unlink('.'.$id_card_back);
         return $this->success('﻿提交成功，等待审核.');
+    }
+
+    /*------------------------------------------------------ */
+    //-- 获取用户信息
+    /*------------------------------------------------------ */
+    public function getUser(){
+        $user_id = input('uid', 0, 'intval');
+        if ($user_id <= 0) {
+            return $this->error('参数有误.');
+        }
+
+        $settings = settings();
+        $transfer_status = $settings['transfer_status'];
+        if ($transfer_status != 1) {
+            return $this->error('转账暂未开启.');
+        }
+
+        $min_transfer = $settings['min_transfer'];
+        $money = input('money', 0, 'intval');
+        if ($min_transfer > 0 && $money < $min_transfer) {
+            return $this->error('最低转账金额'.$min_transfer);
+        }
+        $user = $this->Model->where('user_id',$user_id)->field('user_id,nick_name')->find();
+        if (empty($user)) {
+            return $this->error('用户不存在，请确认输入ID.');
+        }
+        if ($user_id == $this->userInfo['user_id']) {
+            return $this->error('不能给自己转账.');
+        }
+        if ($settings['transfer_limit'] == 1) {
+
+            $UsersBindSuperiorModel = new \app\member\model\UsersBindSuperiorModel();
+            $where = [];
+            $where[] = ['','exp',Db::raw("FIND_IN_SET('".$user_id."',superior)")];
+            $where[] = ['user_id','=',$this->userInfo['user_id']];
+            $prve = $UsersBindSuperiorModel->where($where)->find();
+            // print_r($prve);
+            unset($where);
+            $where = [];
+            $where[] = ['','exp',Db::raw("FIND_IN_SET('".$this->userInfo['user_id']."',superior)")];
+            $where[] = ['user_id','=',$user_id];
+            $next = $UsersBindSuperiorModel->where($where)->find();
+            // var_dump($this->userInfo['user_id']);
+            unset($where);
+            if (empty($prve) && empty($next)) {
+                return $this->error('只能转账给关系链上其他用户.');
+            }           
+        }
+
+        $this->userInfo['pay_password'] = (new \app\member\model\UsersModel)->where('user_id',$this->userInfo['user_id'])->value('pay_password');
+
+        if (empty($this->userInfo['pay_password'])){
+           return $this->error('还没有设置支付密码，请先设置.',url('/member/center/editpaypwd'));
+        }
+        $pay_password = input('pay_password');
+        $pay_password = f_hash($pay_password);
+        if ($pay_password != $this->userInfo['pay_password']){
+            return $this->error('支付密码错误，请核实.');
+        }
+
+
+        $user['money'] = bcdiv($money, 1 , 2);
+        $return['code'] = 1;
+        $return['user'] = $user;
+        return $this->ajaxReturn($return);
     }
 }

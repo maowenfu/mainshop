@@ -62,17 +62,17 @@
             <section class="panel panel-default ">
                 <header>
                     <ul class="nav nav-tabs">
-                        <!-- <li class="active"><a href="#basic" data-toggle="tab">基本配置</a></li> -->
-                        <!-- <li><a href="#bydividend" data-toggle="tab">分佣说明</a></li>
-                        <li><a href="#byrole" data-toggle="tab">身份升级说明</a></li>
+                        <li class="active"><a href="#basic" data-toggle="tab">基本配置</a></li>
+                        <li><a href="#bydividend" data-toggle="tab">排位注意事项</a></li>
+                        <!-- <li><a href="#byrole" data-toggle="tab">身份升级说明</a></li>
                         <li><a href="#byrolegoods" data-toggle="tab">购买身份商品协议</a></li> -->
-                        <li class="active"><a href="#background" data-toggle="tab">分享海报</a></li>
+                        <li><a href="#background" data-toggle="tab">分享海报</a></li>
                     </ul>
                 </header>
 
                 <div class="tab-content ">
-                    <div class="tab-pane " id="basic">
-                        <div class="form-group m-t hide">
+                    <div class="tab-pane active" id="basic">
+                        <div class="form-group m-t ">
                             <label class=" control-label">身份升级机制：</label>
                             <div class="controls">
                                 <label class="radio-inline">
@@ -125,7 +125,7 @@
 
                     </div>
                     <div class="tab-pane " id="bydividend">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="control-label">是否显示：</label>
                             <div class="col-sm-9">
                                 <label class="radio-inline">
@@ -139,18 +139,38 @@
                                 </label>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group publicnote_status">
-                            <label class="control-label">分佣说明：</label>
+                        <div class="form-group ">
+                            <label class="col-sm-2 control-label">注意事项：</label>
                             <div class="col-sm-9 " style="padding-left:0px;">
-                            <textarea rows="8" class="input-max hd" data-toggle="kindeditor" data-config="simple"
-                                      data-kdheight="150" data-tongji="remain"
-                                      data-tongji-target=".js_kindeditor_tongji" data-rule-rangelength="[0,50000]" d
-                                      name="setting[dividend_directions]" style="visibility:hidden;">{$setting.dividend_directions|raw}</textarea>
-                                <p class="pull-right js_kindeditor_tongji">还可输入{0}字</p>
+                                <div class="careful-box">
+                                    {foreach $careful as $v}
+                                    <div class="careful">
+                                        <input type="text" name="careful[]" value="{$v}" style="width: 90%" >
+                                        <span class="maroon"><a href="javascript:;" title="删除" class="fa fa-remove m-xs" onclick="delcareful($(this))"></a></span>
+                                    </div> 
+                                    {/foreach}
+                                </div>
+                                <div>
+                                    <a href="javascript:" type="button" class="btn btn-default " onclick="addcareful();">添加注意事项</a>
+                                </div>
+                                
                             </div>
+                            <script>
+                                function addcareful(){
+                                    $('.careful-box').append('<div class="careful">\
+                                                                <input type="text" name="careful[]" style="width: 90%" >\
+                                                                <span class="maroon"><a href="javascript:;" title="删除" class="fa fa-remove m-xs" onclick="delcareful($(this))"></a></span>\
+                                                            </div>');
+                                }
+                                function delcareful(obj){
+                                    console.log(111);
+                                    obj.parents('.careful').remove();
+                                }
+                            </script>
                         </div>
+                            
                     </div>
                     <div class="tab-pane" id="byrole">
                         <div class="form-group">
@@ -194,7 +214,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane active" id="background">
+                    <div class="tab-pane" id="background">
 
                         <div class="form-group">
                             <label class="col-sm-1 control-label">海报背景图片：</label>

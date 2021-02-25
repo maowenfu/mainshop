@@ -1,0 +1,105 @@
+{extend name="mainadmin@layouts/base" /}
+{block name="main" }
+
+<header class="header  b-b clearfix">
+    <form id="forms" class="talbe-search form-inline "  method="post" action="{:url('getList')}" >
+     <div class="page-breadcrumbs">
+            <ul class="breadcrumb" >
+                <li>
+                    <i class="fa fa-ellipsis-v"></i>
+                    <strong>转账列表</strong>
+                </li>                                  
+            </ul>
+          
+           <div class="form-group">
+                <a class="btn btn-default " data-toggle="reportrange" data-change="submit">
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <small>参与时间</small>
+                    <span></span> <b class="caret"></b>
+                    <input type="hidden" value="{$start_date} - {$end_date}" id="reportrange" name="reportrange" />
+                </a>
+          </div>
+          <select name="status" class="state_select" style="width: 100px;" data-toggle="select2"  onchange="state_select(this)" data-chang="submit">
+            <option value="-1" {$search['status']==-1?'selected':''} >全部状态</option>
+             <option value="0" {$search['status']==0?'selected':''} >待出局</option>
+             <option value="1" {$search['status']==1?'selected':''} >出局中</option>
+             <option value="2" {$search['status']==2?'selected':''} >已出局</option>
+             
+         </select>
+          <input type="text" class="form-control input-large" value="{$search.keyword}" name="keyword" placeholder="会员ID/帐号/手机" data-rule-required="true" />
+          <button class="btn btn-sm btn-default-iq" type="submit" title="搜索"><i class="fa fa-search"></i></button>
+
+         <!-- <button class="btn" type="submit" id="export_btn" ><i class="fa fa-cloud-download"></i>导出报表</button> -->
+         
+    </div>
+    </form>
+</header>
+
+<section class="scrollable wrapper w-f ">
+    <section class="panel panel-default ">
+        <table class="table  table-hover  m-b-none">
+          <caption style="height: 100px;height: 40px;
+    line-height: 40px;
+    font-weight: 800;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;">当前出局排位：</caption>
+            <thead>
+              <tr>
+                  <th>用户</th>
+                  <th>获得奖励次数</th>
+                  <th>获得奖励总金额</th>
+                  <th>获得余额</th>
+                  <th>获得积分</th>
+                  <th>状态</th>
+                  <th>参与时间</th>
+                  <th>出局时间</th>
+                  <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>{$topInfo.user_id} - {$topInfo.user_id|userInfo}</td>
+                  <td>{$topInfo.award_num}</td>
+                  <td>{$topInfo.award_total}</td>
+                  <td>{$topInfo.balance_money}</td>
+                  <td>{$topInfo.integral}</td>
+                  <td>{if $topInfo.status == 0}
+                      待出局
+                      {elseif $topInfo.status == 1}
+                      <font color="green">
+                        出局中
+                      </font>
+                      {elseif $topInfo.status == 2}
+                      <font color="green">
+                        已出局
+                      </font>
+                      {/if}
+                    </td>
+                    <td>{$topInfo.add_time|dateTpl}</td>
+                    <td>{$topInfo.out_time|dateTpl}</td>
+                    <td>
+                      <a href="{:url('shop/sys_admin.order/info',['order_id'=>$topInfo['order_id']])}" target="_blank">【查看订单】</a>
+                    </td>
+              </tr>
+          </tbody>
+        </table>
+        <div class="table-responsive" style="margin-top: 20px" id="list_box">
+            
+
+            {include file="sys_admin/shop_rank/list" /}
+        </div>
+    </section>
+</section>
+<script type="text/javascript">
+    $('#export_btn').click(function(){
+         $('.talbe-search').append('<input type="hidden" name="is_export" id="is_export" value="1">').submit();
+         $('#is_export').remove();
+    })
+
+    $(document).on('click','.operatbtn',function(){
+        $('#operating').val($(this).data('type'));
+        $('.postBtn').click();
+    })
+</script>
+{/block}

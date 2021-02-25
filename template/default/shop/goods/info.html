@@ -148,12 +148,16 @@
                 class="fs22 color_6">首页</span></a>
         <div v5_href><img src="__STATIC__/mobile/default/images/goodsIcon02.png" alt=""><span class="fs22 color_6" >客服</span>
         </div>
+        {if $goods.goods_type == 1}
         <a href="{:url('flow/cart')}"><em class="BGcolor_r fs22 color_w cartNum">{$cartInfo.num|intval}</em><img
                 src="__STATIC__/mobile/default/images/bottom_icon04.png" alt=""><span
                 class="fs22 color_6">购物车</span></a>
+        {/if}
     </div>
     <div class="right">
+        {if $goods.goods_type == 1}
         <div class="fs28 color_w fw_b BGcolor_3 buyBtn" data-type="show">加入购物车</div>
+        {/if}
         <div class="fs28 color_w fw_b BGcolor_r butt buyBtn" data-type="show"> <span class="fs28 color_w fw_b buy_m">立即购买</span></div>
     </div>
     <input type="hidden" name="goods_id" value="{$goods['goods_id']}">

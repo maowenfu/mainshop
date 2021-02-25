@@ -1,0 +1,256 @@
+{extend name="layouts@base" /}
+{block name="head"}
+<link rel="stylesheet" href="__STATIC__/mobile/default/css/wallet.css" />
+<style>
+  .tag_active {
+    cursor: pointer;
+  }
+    .model1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+    }
+    .model1 .modelContent {
+        position: absolute;
+        left: 12.5%;
+        width: 77%;
+        top: 35%;
+        background-color: #fff;
+        min-height: 2rem;
+        z-index: 99999;
+    }
+    .model1 .modelContent .closeBox1 {
+        position: absolute;
+        top: 0.07rem;
+        right: 0.2rem;
+        cursor: pointer;
+        width: 0.3rem;
+        padding: 0.1rem 0;
+    }
+    .model1 .modelContent .closeBox1 img {
+        width: 0.173333rem;
+        height: 0.173333rem;
+        margin: 0 auto;
+    }
+    .model1 .modelContent .title {
+        padding: 0 0.2rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        height: 0.533333rem;
+    }
+    .model1 .modelContent .cantre {
+        width: 100%;
+        padding: 0 0.2rem;
+        margin-top: 0.066667rem;
+    }
+    .cantre p {
+      height: 0.3rem;
+      line-height: 0.3rem;
+    }
+    .cantre em {
+      width: 40%;
+      text-align: right;
+      display: inline-block;
+    }
+    .cantre span {
+      margin-left: 2%;
+    }
+    .model1 .modelContent .buttBox {
+        width: 100%;
+        padding: 0.2rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+    }
+    #payPassword {
+        padding: 0 0.1rem;
+        width: 100%;
+        line-height: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #eee;
+        letter-spacing: 0.3rem;
+        text-align: center;
+    }
+    .fooer {
+      padding: 0 10%;
+      display: flex;
+      margin: 5% auto;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+    .fooer div {
+      width: 50%;
+    }
+    .fooer .close span {
+      background: red;
+      border-radius: 5px;
+      padding: 0.04rem 0.3rem;
+    }
+    .fooer .queding span {
+      background: green;
+      border-radius: 5px;
+      padding: 0.04rem 0.3rem;
+    }
+</style>
+{/block}
+{block name="pageType"}chongzhi{/block}
+{block name="main" }
+  <div class="page-bd">
+    <!-- 页面内容-->
+    <div class="inputBlock">
+      <div class="tips fs30 fw_b color_3">转账积分</div>
+      <input type="text" class="fs40 num textBox" id="amount" placeholder="请输入转账金额">
+    </div>
+    <div class="money">
+        <div class="fs26 color_9">
+          当前积分
+          <span class="color_3" style="margin-left: 10px">
+            {$balance_money}
+          </span>
+        </div>
+        <p class="fs24 tag_active">全部转出</p>
+    </div>
+
+    <div class="money inputpwd" style="padding-bottom: 0">
+        <div class="tips fs28 fw_b color_3" style="width: 20%">支付密码</div>
+        <input type="password" class="fs28 textBox" id="pay_password" style="width: 80%" placeholder="请输入支付密码">
+    </div>
+
+    <div class="inputBlock">
+      <div class="tips fs30 fw_b color_3">收款用户</div>
+      <input type="text" class="fs40 num textBox" id="uid" placeholder="请输入收款用户ID">
+    </div>
+
+    <div class="button fs32 fw_b color_w BGcolor_r postBtn">确认转账</div>
+  </div>
+<!-- 支付密码 -->
+
+<div class="model1 infoModel">
+    <div class="modelContent">
+        <div class="closeBox1" onclick="closeBox1();">
+            <img src="__STATIC__/mobile/default/images/close_icon.png" alt="">
+        </div>
+        <div class="title fs32 color_3 fw_b">转账信息</div>
+        <div class="cantre">
+            <p class="fs30 color_6"><em>转账金额：</em><span class="amount_z"></span></p>
+            <p class="fs30 color_6"><em>收款人ID：</em><span class="user_id"></span></p>
+            <p class="fs30 color_6"><em>收款人昵称：</em><span class="nick_name"></span></p>
+        </div>
+        <div class="fooer fs28 fw_b color_w">
+            <div class="close" onclick="closeBox1();"><span>取消</span></div>
+            <div class="queding" onclick="submit();"><span>确定</span></div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+<script type="text/javascript">
+    var isPost = false
+    var fd = new FormData();
+    var imgNum = 0;
+    $('.postBtn').click(function(){
+      if (isPost == true) return false;
+    	var uid = $('#uid').val();
+      var amount = $('#amount').val();
+      var myamount = "{$userInfo.account.balance_money}";
+      var pay_password = $('#pay_password').val();
+    	if (uid == ''){
+        _alert('请输入收款用户ID.');
+        return false;
+      }
+      if (amount < 1){
+        _alert('转账积分不能少于1.');
+        return false;
+      }
+      if (parseFloat(amount) > parseFloat(myamount)){
+        _alert('转账积分不能大于现有积分.');
+        return false;
+      }
+
+      if (pay_password.length != 6){
+          _alert('请写6位长度的支付密码.');
+          return false;
+      }
+      getUid();
+    })
+    $('.tag_active').click(function(){
+      var money = "{$userInfo.account.balance_money}";
+      $('#amount').val(money);
+      $('.amount_z').html(money);
+    })
+    function getUid(){
+      var uid = $('#uid').val();
+      var money = $('#amount').val();
+      var pay_password = $('#pay_password').val();
+      if (uid.length >= 5) {
+        $.ajax({
+            url: '{:url("member/api.users/getUser")}',
+            type: "POST",
+            data: {uid:uid,money:money,pay_password:pay_password},
+            success: function(res){
+                if (res.code == 0) {
+                  if (res.url != '') {
+                    _alert(res.msg,function(){
+                      window.location.href=res.url;
+                    });
+                    return false;
+                  }
+                    _alert(res.msg);
+                    return false;
+                }
+                $('.user_id').html(res.user.user_id);
+                $('.nick_name').html(res.user.nick_name);
+                $('.amount_z').html(res.user.money);
+                $('.infoModel').show();
+            },
+            error: function(res){
+                console.log(res)
+            }
+        });
+      }else{
+        _alert('用户ID不正确');
+      }
+    }
+    function submit(){
+      if (isPost == true) return false;
+      var uid = $('#uid').val();
+      var amount = $('#amount').val();
+      var pay_password = $('#pay_password').val();
+
+      fd.append("uid",uid);
+      fd.append("amount", amount);
+      fd.append("pay_password", pay_password);
+      isPost = true;
+      $.ajax({
+          url: '{:url("member/api.Wallet/transfer")}',
+          type: 'post',
+          processData: false,
+          contentType: false,
+          data: fd,
+          success: function (res) {
+            isPost = false;
+            if (res.code == 0){
+              _alert(res.msg);
+              return false;
+            }
+            _alert(res.msg,'{:url("member/wallet/transferLog")}');
+            return false;
+          }
+      })
+    }
+    function closeBox1(){
+        $('.model1').hide();
+    }
+</script>
+{/block}

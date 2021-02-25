@@ -1,0 +1,162 @@
+{extend name="layouts@base" /}
+{block name="head"}
+<style type="text/css" media="screen">
+	*{
+		box-sizing: unset;
+	}
+	.box {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+	.box .top {
+		width: 100%;
+		position: relative;
+	}
+	.box .top .top-img{
+		width: 100%
+	}
+	.box .top .careful {
+		position: absolute;
+		top: .3rem;
+		width: 95%;
+		/* min-height: 376px; */
+		background: #FFFFFF;
+		box-shadow: 0px 10px 18px 2px rgba(246, 82, 54, 0.15);
+		border-radius: .19rem;
+		transform: translateX(-50%);
+		left: 50%;
+	}
+	.box .top .careful .title{
+		padding: .14rem .2rem;
+		width: 100%;
+		height: .6rem;
+		float: left;
+	}
+	.box .top .careful .title img{
+		padding: 0;
+		margin: 0;
+		width: .6rem;
+		height: .6rem;
+		float: left;
+	}
+	.box .top .careful .title p{
+		padding: 0;
+		margin: 0;
+		font-size: .22rem;
+		line-height: .6rem;
+		float: left;
+		font-weight: 800;
+
+	}
+
+	.box .top .careful .list {
+		padding: 0 .3rem .1rem;
+		color: #666666;
+	}
+	.box .top .careful .list p{
+		margin-bottom: .2rem;
+	}
+	
+	.content {
+		width: 100%;
+		min-height: 100px;
+		position: absolute;
+		margin-top: .34rem;
+		margin-bottom: .34rem;
+		
+	}
+	.content .list-box{
+		width: 100%;
+		margin: 0 auto;
+		/* height: 881px; */
+		background: #FFFFFF;
+		box-shadow: 0px 10px 18px 2px rgba(246, 82, 54, 0.15);
+		border-radius: .19rem;
+	}
+	.content .list-box table{
+		width: 100%;
+		border: none;
+		font-size: .20rem;
+
+	}
+
+	.content .list-box table caption{
+		text-align: left;
+		padding-left: .2rem;
+		height: .7rem;
+		line-height: .7rem;
+		border-bottom: 1px solid #e9e9e9;
+		color: #F65236;
+	}
+	.content .list-box table thead,.content .list-box table tbody{
+		height: .65rem;
+		line-height: .65rem;
+		
+	}
+
+	.content .list-box table thead tr th,.content .list-box table tbody tr td{
+		border: 0;
+		padding: 0;
+		border-bottom: 1px solid #e9e9e9;
+		color: #F65236;
+	}
+	.content .list-box table tbody tr td{
+		border: 0;
+		padding: 0;
+		text-align: center;
+		color: #666666;
+	}
+	
+	.content .list-box table tbody tr:first-child td{
+		color: #fff;
+		background-color: #F65236;
+	}
+
+</style>
+{/block}
+{block name="main" }
+<div class="box">
+	<div class="top">
+		<img class="top-img" src="__STATIC__/mobile/default/images/rank_banner.png" alt="">	
+		<div class="careful">
+			<div class="title">
+				<img src="__STATIC__/mobile/default/images/mark-icon.png" alt="">
+				<p>注意事项</p>
+			</div>
+			<div class="list fs28" >
+				{foreach $careful as $v}
+				<p>{$v}</p>
+				{/foreach}
+			</div>
+			<div class="content">
+				<div class="list-box">
+					<table  border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+						<caption class="fs32">您当前序列号为：{$numRank}</caption>
+						<thead class="fs30">
+							<tr>
+								<th>序列号</th>
+								<th>账号</th>
+								<th>出局状态</th>
+							</tr>
+						</thead>
+						<tbody class="fs28">
+							{foreach $list as $k => $row}
+							<tr>
+								<td>{$k+1}</td>
+								<td>{$row['user_id']|userInfo}</td>
+								<td>
+									{$row['status'] == 1?'出局中':'待出局'}
+								</td>
+							</tr>
+							{/foreach}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</div>
+{/block}
