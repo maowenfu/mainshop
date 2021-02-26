@@ -61,7 +61,6 @@ TRUNCATE TABLE users_account_log;
 TRUNCATE TABLE users_address;
 TRUNCATE TABLE users_avatar_user;
 TRUNCATE TABLE users_bind_superior;
-TRUNCATE TABLE users_level;
 TRUNCATE TABLE users_log_login;
 TRUNCATE TABLE users_log_sys;
 TRUNCATE TABLE users_recharge_log;
@@ -70,6 +69,4 @@ TRUNCATE TABLE users_withdraw_account;
 TRUNCATE TABLE users_withdraw_log;
 TRUNCATE TABLE users_account_log;
 TRUNCATE TABLE users_transfer_log;
-
-
 TRUNCATE TABLE weixin_users;
