@@ -339,17 +339,17 @@ class UsersModel extends BaseModel
         }
         $share_token = session('share_token');
         //分享注册
-        if ($wxInfo['wxuid'] > 0) {//微信访问根据微信分享来源记录，执行
-            $bind_share_rule = settings('bind_share_rule');
-            if ($bind_share_rule == 0) {//按最先分享绑定
-                $sort = 'id ASC';
-            } else {//按最后分享绑定
-                $sort = 'id DESC';
-            }
-            $pid = (new \app\weixin\model\WeiXinInviteLogModel)->where('wxuid', $wxInfo['wxuid'])->order($sort)->value('user_id');
-        } elseif (empty($share_token) == false) {
+        // if ($wxInfo['wxuid'] > 0) {//微信访问根据微信分享来源记录，执行
+        //     $bind_share_rule = settings('bind_share_rule');
+        //     if ($bind_share_rule == 0) {//按最先分享绑定
+        //         $sort = 'id ASC';
+        //     } else {//按最后分享绑定
+        //         $sort = 'id DESC';
+        //     }
+        //     $pid = (new \app\weixin\model\WeiXinInviteLogModel)->where('wxuid', $wxInfo['wxuid'])->order($sort)->value('user_id');
+        // } elseif (empty($share_token) == false) {
             $pid = $this->getShareUser($share_token);
-        }
+        // }
         return $pid * 1;
     }
 
