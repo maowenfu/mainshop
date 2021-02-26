@@ -461,10 +461,10 @@ class Goods extends AdminController
         }
 
         //赠送积分处理
-        $is_give_integral = input('is_give_integral',0,'intval');
-        if ($is_give_integral <= 0){
-            $row['give_integral'] = $is_give_integral;
-        }
+        // $is_give_integral = input('is_give_integral',0,'intval');
+        // if ($is_give_integral <= 0){
+            $row['give_integral'] = -1;
+        // }
         if (empty($row['tag_id'])) {
             $row['tag_id'] = 0;
         }

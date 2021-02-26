@@ -286,9 +286,10 @@ class Flow extends ApiController
             if ($grow['supplyer_id'] > 0) {//供应商商品计算供货总价
                 $inArr['settle_goods_price'] += $grow['settle_price'] * $grow['goods_number'];
             }
-            if ($grow['give_integral'] > 0) {//赠送积分总计
-                $inArr['give_integral'] += $grow['give_integral'] * $grow['goods_number'];
-            }
+            // if ($grow['give_integral'] > 0) {//赠送积分总计
+            //     $inArr['give_integral'] += $grow['give_integral'] * $grow['goods_number'];
+            // }
+            $inArr['give_integral'] = 0;
             if ($grow['use_integral'] > 0) {//扣减积分总计,组合购买时调用
                 $use_integral += $grow['use_integral'] * $grow['goods_number'];
             }
@@ -566,7 +567,7 @@ class Flow extends ApiController
                 'discount' => $og['discount'],
                 'add_time'=>$add_time,
                 'user_id' => $og['user_id'],
-                'give_integral' => $og['give_integral'],
+                'give_integral' =>0,
                 'use_integral' => $og['use_integral'],
                 'is_dividend' => $og['is_dividend'],
                 'bonus_ids' => $bonus_ids,

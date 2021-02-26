@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-26 13:43:57
+ * @Last Modified time: 2021-02-26 14:32:47
  */
 namespace app\shop\model;
 
@@ -76,7 +76,7 @@ class ShopRankModel extends BaseModel
     		$upData['update_time'] = $time;
     		$res = $this->where('rank_id',$topInfo['rank_id'])->update($upData);
     		if ($res < 1) {
-                $this->_log($topInfo['rank_id'],'更新失败-1');
+                $this->_log($topInfo['rank_id'],'出团排位信息更新失败-1');
     			return false;
     		}
     		unset($upData);
@@ -263,7 +263,7 @@ class ShopRankModel extends BaseModel
             return false;
         }
         //使用积分，下单即扣除
-        if ($use_integral > 0){
+        if ($inArr['use_integral'] > 0){
             $changedata['use_integral'] = $use_integral * -1;
             $changedata['change_desc'] = '购物抵扣积分';
             $changedata['change_type'] = 3;
