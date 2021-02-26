@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-26 14:32:47
+ * @Last Modified time: 2021-02-26 14:53:22
  */
 namespace app\shop\model;
 
@@ -264,13 +264,13 @@ class ShopRankModel extends BaseModel
         }
         //使用积分，下单即扣除
         if ($inArr['use_integral'] > 0){
-            $changedata['use_integral'] = $use_integral * -1;
+            $changedata['use_integral'] = $inArr['use_integral'] * -1;
             $changedata['change_desc'] = '购物抵扣积分';
             $changedata['change_type'] = 3;
             $changedata['by_id'] = $order_id;
             $res = (new AccountLogModel)->change($changedata, $userInfo['user_id'], false);
             if ($res !== true) {
-                $this->_log($info['rank_id'],'扣减积分失败失败');
+                $this->_log($info['rank_id'],'扣减积分失败');
                 return false;
             }
         }
