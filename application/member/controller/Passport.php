@@ -66,6 +66,7 @@ class Passport  extends ClientbaseController{
 		if ($register_status != 1){
 			return $this->error('暂不开放注册.');
 		}
+
 		$this->assign('title', '会员注册');
         $this->assign('register_invite_code', settings('register_invite_code'));
         $this->assign('lang_register_invite_code', config('config.register_invite_code'));
@@ -83,9 +84,15 @@ class Passport  extends ClientbaseController{
         //         }
         //         $share_token = (new \app\weixin\model\WeiXinInviteLogModel)->where('wxuid', $wxInfo['wxuid'])->order($sort)->value('share_token');
         //     }else{
-                $share_token = session('share_token');
+                
         //     }
         // }
+        $share_token = input('share_token');
+        if (empty($share_token == false)) {
+            session('share_token',$share_token);
+        }else{
+            $share_token = session('share_token');
+        }
         $this->assign('share_token', $share_token);
         return $this->fetch('register');
     }
