@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-26 11:26:33
+ * @Last Modified time: 2021-02-26 13:43:57
  */
 namespace app\shop\model;
 
@@ -107,10 +107,6 @@ class ShopRankModel extends BaseModel
                 }
 
                 $UsersModel->where('user_id',$info['user_id'])->update(['out_num'=>['INC',1]]);
-
-
-                
-
                 $res = $this->repeatInvestment($info);
                 if (true != $res) {
                     return false;
@@ -420,7 +416,7 @@ class ShopRankModel extends BaseModel
         $inArr = [];
         $inArr['log_info'] = $info;
         $inArr['rank_id'] = $rank_id;
-        $inArr['rank_id'] = $user_id;
+        $inArr['user_id'] = $user_id;
         $inArr['add_time'] = time();
         (new RankErrorModel)::create($inArr);
     }
