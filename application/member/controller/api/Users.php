@@ -802,7 +802,7 @@ class Users extends ApiController
         $file_path = config('config._upload_') . 'qrcode/';
         makeDir($file_path);
         $file = $file_path .'_'.$this->userInfo['token'] . '.png';
-        $value = config('config.host_path').'?share_token='.$this->userInfo['token'];
+        $value = config('config.host_path').'?/member/passport/register/share_token='.$this->userInfo['token'];
         $QRcode::png($value, $file, "L", 10, 1, 2, true);
         return $file;
     }

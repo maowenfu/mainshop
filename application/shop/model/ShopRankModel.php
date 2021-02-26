@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-25 17:37:35
+ * @Last Modified time: 2021-02-26 10:50:17
  */
 namespace app\shop\model;
 
@@ -459,6 +459,7 @@ class ShopRankModel extends BaseModel
         $changedata['use_integral'] = $dividend_bean;
         $changedata['change_desc'] = '排位奖励到账';
         $changedata['total_dividend'] = ($dividend_amount + $dividend_bean);
+        $changedata['change_type'] = 4;
         $res = (new AccountLogModel)->change($changedata, $userInfo['user_id'], false);
         if ($res !== true) {
             return false;
