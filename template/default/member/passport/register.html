@@ -52,11 +52,11 @@
 
     <div class="inputBlock bor_b {$register_invite_code==0?'hide':''}">
         <img src="__STATIC__/mobile/default/images/register01.png" alt="" class="imgIcon">
-        {empty name="$share_token"}
+        {if empty($share_token)}
             <input type="text" class="fs32 fw_b textBox" id="invite_code" placeholder="{$lang_register_invite_code[$register_invite_code]}">
         {else/}
             <input type="text" class="fs32 fw_b textBox" id="invite_code" value="{$share_token}" disabled placeholder="邀请人的{$lang_register_invite_code[$register_invite_code]}">
-        {/empty}
+        {/if}
     </div>
     <div class="rulesBox">
         <label for="isAgree">
