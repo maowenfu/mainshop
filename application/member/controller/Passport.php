@@ -71,7 +71,7 @@ class Passport  extends ClientbaseController{
         $this->assign('lang_register_invite_code', config('config.register_invite_code'));
         $register_must_invite = settings('register_must_invite');
         $this->assign('register_must_invite', $register_must_invite);
-        $share_token = '';
+        // $share_token = '';
         // if ($register_must_invite == 1){
         //     $wxInfo = session('wxInfo');
         //     if (empty($wxInfo) == false) {//微信访问根据微信分享来源记录，执行
@@ -83,7 +83,7 @@ class Passport  extends ClientbaseController{
         //         }
         //         $share_token = (new \app\weixin\model\WeiXinInviteLogModel)->where('wxuid', $wxInfo['wxuid'])->order($sort)->value('share_token');
         //     }else{
-        //         $share_token = session('share_token');
+                $share_token = session('share_token');
         //     }
         // }
         $this->assign('share_token', $share_token);
