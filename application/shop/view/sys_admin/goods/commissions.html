@@ -6,12 +6,13 @@
                 <tr>
                     <th class="txt_center">公排奖金</th>
                     <th class="txt_center">推广奖金</th>
+                </tr>
             </thead>
             <tbody id="d_role_box">
                 <tr>
                     <td align="center">
                        获得 <input type="text" name="rank_award[num]" class="input-ssmall" min="-1" value="{$row.rank_award.num}">
-                        元 滑落两单，其中 <input type="text" name="rank_award[repeat_num]" class="input-ssmall" min="-1" value="{$row.rank_award.repeat_num}"> % 用于复投
+                        元 滑落两单，其中 <input type="text" name="rank_award[repeat_num]" class="input-ssmall" min="-1" value="{$row.rank_award.repeat_num}"> 元用于复投
                     </td>
                     <td align="center">
                         <input type="text" name="rank_award[push_num]" class="input-ssmall" min="-1" value="{$row.rank_award.push_num}">
@@ -32,6 +33,7 @@
                     <th class="txt_center">分销身份</th>
                     <th class="txt_center">级差奖励</th>
                     <th class="txt_center">平级奖励</th>
+                </tr>
             </thead>
             <tbody id="d_role_box">
                 {volist name="UsersRole" id="urow" }

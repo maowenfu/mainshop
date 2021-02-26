@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-26 10:50:17
+ * @Last Modified time: 2021-02-26 11:26:33
  */
 namespace app\shop\model;
 
@@ -64,7 +64,8 @@ class ShopRankModel extends BaseModel
     		unset($inArr);
     		// 计算奖励
     		$award_num = $rank_award['num'];
-    		$dividend_bean = bcdiv($award_num * $rank_award['repeat_num'] , 100 , 2);
+    		// $dividend_bean = bcdiv($award_num * $rank_award['repeat_num'] , 100 , 2);
+            $dividend_bean = $rank_award['repeat_num'];  // 固定金额
     		$dividend_amount = $award_num - $dividend_bean;
 
     		$upData = [];
