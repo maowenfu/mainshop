@@ -7,7 +7,7 @@
             <ul class="breadcrumb" >
                 <li>
                     <i class="fa fa-ellipsis-v"></i>
-                    <strong>转账列表</strong>
+                    <strong>排位列表</strong>
                 </li>                                  
             </ul>
           
@@ -51,6 +51,7 @@
                   <th>获得奖励总金额</th>
                   <th>获得余额</th>
                   <th>获得积分</th>
+                  <th>出局次数</th>
                   <th>状态</th>
                   <th>参与时间</th>
                   <th>出局时间</th>
@@ -64,6 +65,7 @@
                   <td>{$topInfo.award_total}</td>
                   <td>{$topInfo.balance_money}</td>
                   <td>{$topInfo.integral}</td>
+                  <td>{$topInfo.out_num}</td>
                   <td>{if $topInfo.status == 0}
                       待出局
                       {elseif $topInfo.status == 1}

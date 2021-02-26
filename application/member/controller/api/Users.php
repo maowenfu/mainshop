@@ -238,7 +238,7 @@ class Users extends ApiController
         $where[] = $arr;
 
         $where[] = ['change_time', 'between', array($_time, strtotime(date('Y-m-t', $_time)) + 86399)];
-        $rows = $AccountLogModel->where($where)->order('change_time DESC')->select();
+        $rows = $AccountLogModel->where($where)->order('change_time DESC,log_id DESC')->select();
         $return['income'] = 0;
         $return['expend'] = 0;
         foreach ($rows as $key => $row) {

@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-24 16:06:42
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-26 14:54:03
+ * @Last Modified time: 2021-02-26 16:15:47
  */
 namespace app\shop\model;
 
@@ -107,6 +107,7 @@ class ShopRankModel extends BaseModel
                 }
 
                 $UsersModel->where('user_id',$info['user_id'])->update(['out_num'=>['INC',1]]);
+                $UsersModel->cleanMemcache($info['user_id']);
                 $res = $this->repeatInvestment($info);
                 if (true != $res) {
                     return false;

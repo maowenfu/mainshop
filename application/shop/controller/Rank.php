@@ -4,7 +4,7 @@
  * @Author: Maowenfu
  * @Date:   2021-02-25 10:20:51
  * @Last Modified by:   maowenfu
- * @Last Modified time: 2021-02-25 12:00:43
+ * @Last Modified time: 2021-02-26 16:30:22
  * 排位相关
  */
 namespace app\shop\controller;
@@ -25,6 +25,12 @@ class Rank  extends ClientbaseController{
     	$this->assign('title', '排位列表');
 
         $list = $this->Model->where('status','<>',2)->limit(10)->order('add_time ASC')->select()->toArray();
+
+        foreach ($list as $key => $row) {
+            $row['out_num'] = $this->Model->where([['status','=',2],['user_id','=',$row['user_id']]])->count();
+            $list[$key] = $row;
+        }
+
         $numRank = 0;
         $my = $this->Model->where([['status','<>',2],['user_id','=',$this->userInfo['user_id']]])->find();
         if (empty($my)) {

@@ -78,6 +78,7 @@
 		width: 100%;
 		border: none;
 		font-size: .20rem;
+		table-layout: fixed;
 
 	}
 
@@ -106,6 +107,9 @@
 		padding: 0;
 		text-align: center;
 		color: #666666;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	
 	.content .list-box table tbody tr:first-child td{
@@ -135,9 +139,10 @@
 						<caption class="fs32">您当前序列号为：{$numRank}</caption>
 						<thead class="fs30">
 							<tr>
-								<th>序列号</th>
-								<th>账号</th>
-								<th>出局状态</th>
+								<th width="25%">序列号</th>
+								<th width="25%">账号</th>
+								<th width="25%">出局次数</th>
+								<th width="25%">出局状态</th>
 							</tr>
 						</thead>
 						<tbody class="fs28">
@@ -145,6 +150,7 @@
 							<tr>
 								<td>{$k+1}</td>
 								<td>{$row['user_id']|userInfo}</td>
+								<td>{$row['out_num']}</td>
 								<td>
 									{$row['status'] == 1?'出局中':'待出局'}
 								</td>
