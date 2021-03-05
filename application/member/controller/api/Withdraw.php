@@ -83,7 +83,7 @@ class Withdraw extends ApiController
     //-- 验证银行卡是否有效
     /*------------------------------------------------------ */
 	public function checkBankCard($card_number){
-        $arr_no = str_split($card_number);
+		$arr_no = str_split($card);
         $last_n = $arr_no[count($arr_no)-1];
         krsort($arr_no);
         $i = 1;
@@ -103,12 +103,38 @@ class Withdraw extends ApiController
             $i++;
         }
         $total -= $last_n;
-        $x = 10 - ($total % 10);
-        if($x == $last_n){
-            return true;
+        $total *= 9;
+        if ($last_n == ($total%10)) {
+        	return true;
         }else{
             return false;
         }
+        // $arr_no = str_split($card_number);
+        // $last_n = $arr_no[count($arr_no)-1];
+        // krsort($arr_no);
+        // $i = 1;
+        // $total = 0;
+        // foreach ($arr_no as $n){
+        //     if($i%2==0){
+        //         $ix = $n*2;
+        //         if($ix>=10){
+        //             $nx = 1 + ($ix % 10);
+        //             $total += $nx;
+        //         }else{
+        //             $total += $ix;
+        //         }
+        //     }else{
+        //         $total += $n;
+        //     }
+        //     $i++;
+        // }
+        // $total -= $last_n;
+        // $x = 10 - ($total % 10);
+        // if($x == $last_n){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
     }
 	/*------------------------------------------------------ */
     //-- 删除用户提现帐户
